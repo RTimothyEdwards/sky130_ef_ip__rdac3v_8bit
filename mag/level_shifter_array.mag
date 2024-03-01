@@ -1,0 +1,10 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1652995732
+use level_shifter  level_shifter_0
+array 0 0 111 0 7 1628
+timestamp 1652995732
+transform 1 0 61 0 1 40
+box -84 -50 4847 1669
+<< end >>

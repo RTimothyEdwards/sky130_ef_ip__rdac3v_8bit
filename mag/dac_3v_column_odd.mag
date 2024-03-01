@@ -1,0 +1,462 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1653060931
+<< metal1 >>
+rect 371 15215 653 15263
+rect 371 15163 419 15215
+rect 38 15115 419 15163
+rect 605 15170 653 15215
+rect 605 15122 885 15170
+rect 117 13772 151 13828
+rect 875 13483 909 13562
+rect -18 1607 38 1724
+rect 117 1713 151 1777
+rect 988 1608 1047 1725
+rect 875 1399 909 1467
+rect 117 208 151 264
+rect -18 45 38 100
+rect 938 45 1047 100
+<< metal2 >>
+rect 173 15007 225 15041
+rect 791 14877 843 15041
+rect 331 14682 582 14738
+rect 173 14509 225 14586
+rect 801 14509 853 14568
+rect 173 14233 230 14284
+rect 801 14214 853 14284
+rect 458 14048 696 14104
+rect 183 13759 235 13921
+rect 801 13759 853 13795
+rect 546 10988 598 11034
+rect 546 10932 806 10988
+rect 229 10277 480 10333
+rect 428 10217 480 10277
+rect 756 8019 806 8075
+rect 229 7147 259 7203
+rect 544 7102 600 7160
+rect 364 7046 600 7102
+rect 364 6640 600 6696
+rect 544 6565 600 6640
+rect 364 5782 600 5838
+rect 544 5693 600 5782
+rect 546 4944 598 5006
+rect 546 4888 806 4944
+rect 229 4233 480 4289
+rect 428 4189 480 4233
+rect 766 3498 800 3554
+rect 173 1444 225 1478
+rect 791 1314 843 1478
+rect 329 1119 567 1175
+rect 173 946 225 1023
+rect 801 946 853 1005
+rect 173 670 225 721
+rect 801 651 853 721
+rect 457 485 694 541
+rect 183 196 235 358
+rect 801 196 853 232
+<< metal3 >>
+rect 164 13642 224 15247
+rect 31 13582 224 13642
+rect 290 13377 350 15247
+rect 30 13317 350 13377
+rect 30 13212 96 13317
+rect 421 13182 481 13715
+rect 266 13017 326 13085
+rect 162 4379 222 10312
+rect 296 8710 356 11668
+rect 422 11089 482 12540
+rect 548 11724 608 13175
+rect 422 8075 482 9526
+rect 548 8710 608 10161
+rect 679 9626 739 12510
+rect 297 5786 357 7237
+rect 553 7210 613 7931
+rect 485 7140 613 7210
+rect 296 2682 356 5640
+rect 422 5061 482 6512
+rect 553 4469 613 7140
+rect 679 4636 739 6512
+rect 805 4909 865 10932
+rect 679 4576 867 4636
+rect 553 4409 740 4469
+rect 422 2123 482 3467
+rect 548 2682 608 4133
+rect 680 2130 740 4409
+rect 807 3554 867 4576
+rect 550 1623 610 1910
+<< metal4 >>
+rect 1003 13254 1049 13314
+rect 1003 12996 1049 13056
+rect 175 12870 246 12930
+rect -18 12729 28 12789
+rect 1003 12600 1049 12660
+rect -18 12471 28 12531
+rect 1003 12342 1049 12402
+rect -18 11876 28 11936
+rect 1003 11747 1049 11807
+rect -18 11618 28 11678
+rect 1003 11489 1049 11549
+rect -18 11222 28 11282
+rect 1003 11093 1049 11153
+rect -18 10964 28 11024
+rect 1003 10835 1049 10895
+rect -18 10369 28 10429
+rect 1003 10240 1049 10300
+rect -18 10111 28 10171
+rect 1003 9982 1049 10042
+rect -18 9715 28 9775
+rect 1003 9586 1049 9646
+rect -18 9457 28 9517
+rect 1003 9328 1049 9388
+rect -18 8862 28 8922
+rect 1003 8733 1049 8793
+rect -18 8604 28 8664
+rect 1003 8475 1049 8535
+rect -18 8208 28 8268
+rect 1003 8079 1049 8139
+rect -18 7950 28 8010
+rect 1003 7821 1049 7881
+rect -18 7355 28 7415
+rect 1003 7226 1049 7286
+rect -18 7097 28 7157
+rect 1003 6968 1049 7028
+rect -18 6701 28 6761
+rect 1003 6572 1049 6632
+rect -18 6443 28 6503
+rect 1003 6314 1049 6374
+rect -18 5848 28 5908
+rect 1003 5719 1049 5779
+rect -18 5590 28 5650
+rect 1003 5461 1049 5521
+rect -18 5194 28 5254
+rect 1003 5065 1049 5125
+rect -18 4936 28 4996
+rect 1003 4807 1049 4867
+rect -18 4341 28 4401
+rect 1003 4212 1049 4272
+rect -18 4083 28 4143
+rect 1003 3954 1049 4014
+rect -18 3687 28 3747
+rect 1003 3558 1049 3618
+rect -18 3429 28 3489
+rect 1003 3300 1049 3360
+rect -18 2834 28 2894
+rect 1003 2705 1049 2765
+rect -18 2576 28 2636
+rect 1003 2447 1049 2507
+rect -18 2180 28 2240
+rect 1003 2051 1049 2111
+rect -18 1922 28 1982
+rect 1003 1793 1049 1853
+rect -18 1560 460 1620
+use dac_3v_cell  dac_3v_cell_0
+array 0 0 1067 0 5 1507
+timestamp 1652924542
+transform 1 0 -117 0 1 3282
+box 99 -275 1166 1410
+use dac_3v_cell  dac_3v_cell_1
+timestamp 1652924542
+transform 1 0 -117 0 1 268
+box 99 -275 1166 1410
+use dac_3v_cell  dac_3v_cell_2
+timestamp 1652924542
+transform 1 0 -117 0 1 13831
+box 99 -275 1166 1410
+use dac_3v_cell_odd  dac_3v_cell_odd_0
+timestamp 1652924542
+transform 1 0 -117 0 1 1775
+box 99 -275 1166 1410
+use dac_3v_cell_top  dac_3v_cell_top_0
+timestamp 1652924542
+transform 1 0 -117 0 1 12324
+box 97 -275 1166 1410
+use m2m3contact  m2m3contact_0
+timestamp 1652924542
+transform 1 0 139 0 1 1140
+box 276 844 350 997
+use m2m3contact  m2m3contact_1
+timestamp 1652924542
+transform 1 0 139 0 -1 4405
+box 276 844 350 997
+use m2m3contact  m2m3contact_2
+timestamp 1652924542
+transform 1 0 139 0 1 1775
+box 276 844 350 997
+use m2m3contact  m2m3contact_3
+timestamp 1652924542
+transform 1 0 139 0 1 4154
+box 276 844 350 997
+use m2m3contact  m2m3contact_4
+timestamp 1652924542
+transform 1 0 139 0 -1 7419
+box 276 844 350 997
+use m2m3contact  m2m3contact_5
+timestamp 1652924542
+transform 1 0 139 0 1 4789
+box 276 844 350 997
+use m2m3contact  m2m3contact_6
+timestamp 1652924542
+transform 1 0 139 0 1 7168
+box 276 844 350 997
+use m2m3contact  m2m3contact_7
+timestamp 1652924542
+transform 1 0 139 0 -1 10433
+box 276 844 350 997
+use m2m3contact  m2m3contact_8
+timestamp 1652924542
+transform 1 0 139 0 1 7803
+box 276 844 350 997
+use m2m3contact  m2m3contact_9
+timestamp 1652924542
+transform 1 0 139 0 1 10182
+box 276 844 350 997
+use m2m3contact  m2m3contact_10
+timestamp 1652924542
+transform 1 0 139 0 -1 13447
+box 276 844 350 997
+use m2m3contact  m2m3contact_11
+timestamp 1652924542
+transform 1 0 139 0 1 10817
+box 276 844 350 997
+use m2m3contact  m2m3contact_12
+timestamp 1652924542
+transform 1 0 265 0 -1 5040
+box 276 844 350 997
+use m2m3contact  m2m3contact_13
+timestamp 1652924542
+transform 1 0 265 0 -1 4406
+box 276 844 350 997
+use m2m3contact  m2m3contact_14
+timestamp 1652924542
+transform 1 0 265 0 1 1775
+box 276 844 350 997
+use m2m3contact  m2m3contact_15
+timestamp 1652924542
+transform 1 0 14 0 -1 7547
+box 276 844 350 997
+use m2m3contact  m2m3contact_16
+timestamp 1652924542
+transform 1 0 14 0 1 4931
+box 276 844 350 997
+use m2m3contact  m2m3contact_17
+timestamp 1652924542
+transform 1 0 267 0 -1 2899
+box 276 844 350 997
+use m2m3contact  m2m3contact_18
+timestamp 1652924542
+transform 1 0 265 0 -1 10434
+box 276 844 350 997
+use m2m3contact  m2m3contact_19
+timestamp 1652924542
+transform 1 0 265 0 1 7803
+box 276 844 350 997
+use m2m3contact  m2m3contact_20
+timestamp 1652924542
+transform 1 0 265 0 -1 11068
+box 276 844 350 997
+use m2m3contact  m2m3contact_21
+timestamp 1652924542
+transform 1 0 265 0 -1 13448
+box 276 844 350 997
+use m2m3contact  m2m3contact_22
+timestamp 1652924542
+transform 1 0 265 0 1 10817
+box 276 844 350 997
+use m2m3contact  m2m3contact_23
+timestamp 1652924542
+transform 1 0 265 0 -1 14082
+box 276 844 350 997
+use m2m3contact  m2m3contact_24
+timestamp 1652924542
+transform 1 0 396 0 -1 13447
+box 276 844 350 997
+use m2m3contact  m2m3contact_25
+timestamp 1652924542
+transform 1 0 396 0 1 8675
+box 276 844 350 997
+use m2m3contact  m2m3contact_26
+timestamp 1652924542
+transform 1 0 399 0 1 10182
+box 276 844 350 997
+use m2m3contact  m2m3contact_27
+timestamp 1652924542
+transform 1 0 396 0 -1 7419
+box 276 844 350 997
+use m2m3contact  m2m3contact_28
+timestamp 1652924542
+transform 1 0 399 0 1 4154
+box 276 844 350 997
+use m2m3contact  m2m3contact_29
+timestamp 1652924542
+transform 1 0 524 0 1 2647
+box 276 844 350 997
+use m2m3contact  m2m3contact_30
+timestamp 1652924542
+transform 1 0 13 0 -1 6547
+box 276 844 350 997
+use m2m3contact  m2m3contact_31
+timestamp 1652924542
+transform 1 0 13 0 1 3282
+box 276 844 350 997
+use m2m3contact  m2m3contact_32
+timestamp 1652924542
+transform 1 0 13 0 1 1775
+box 276 844 350 997
+use m2m3contact  m2m3contact_33
+timestamp 1652924542
+transform 1 0 13 0 -1 12575
+box 276 844 350 997
+use m2m3contact  m2m3contact_34
+timestamp 1652924542
+transform 1 0 16 0 1 9310
+box 276 844 350 997
+use m2m3contact  m2m3contact_35
+timestamp 1652924542
+transform 1 0 13 0 1 7803
+box 276 844 350 997
+use m2m3contact  m2m3contact_36
+timestamp 1652924542
+transform 1 0 -121 0 1 3382
+box 276 844 350 997
+use m2m3contact  m2m3contact_37
+timestamp 1652924542
+transform 1 0 -121 0 -1 11184
+box 276 844 350 997
+use m2m3contact  m2m3contact_38
+timestamp 1652924542
+transform 1 0 -121 0 -1 8054
+box 276 844 350 997
+use m2m3contact  m2m3contact_39
+timestamp 1652924542
+transform -1 0 1148 0 1 4037
+box 276 844 350 997
+use m2m3contact  m2m3contact_40
+timestamp 1652924542
+transform -1 0 1148 0 1 7168
+box 276 844 350 997
+use m2m3contact  m2m3contact_41
+timestamp 1652924542
+transform -1 0 1148 0 -1 11839
+box 276 844 350 997
+use m2m3contact  m2m3contact_42
+timestamp 1652924542
+transform 1 0 270 0 -1 8927
+box 276 844 350 997
+use m2m3contact  m2m3contact_43
+timestamp 1652924542
+transform 1 0 139 0 1 6296
+box 276 844 350 997
+use m2m3contact  m2m3contact_44
+timestamp 1652924542
+transform 1 0 397 0 1 1140
+box 276 844 350 997
+use m2m3contact  m2m3contact_45
+timestamp 1652924542
+transform 1 0 14 0 -1 7953
+box 276 844 350 997
+use m2m3contact  m2m3contact_46
+timestamp 1652924542
+transform 1 0 138 0 1 12324
+box 276 844 350 997
+use m2m3contact  m2m3contact_47
+timestamp 1652924542
+transform 1 0 -17 0 -1 14082
+box 276 844 350 997
+use m3m4contact  m3m4contact_0
+timestamp 1652924542
+transform 1 0 717 0 1 -5906
+box -258 7458 -104 7613
+use m3m4contact  m3m4contact_1
+timestamp 1652924542
+transform 1 0 433 0 1 5404
+box -258 7458 -104 7613
+<< labels >>
+flabel metal4 1024 13279 1024 13279 0 FreeSans 240 0 0 0 b0
+flabel metal4 1020 13025 1020 13025 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1020 11776 1020 11776 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1019 11520 1019 11520 0 FreeSans 240 0 0 0 b0
+flabel metal4 7 11643 7 11643 0 FreeSans 240 0 0 0 b1b
+flabel metal4 5 11904 5 11904 0 FreeSans 240 0 0 0 b1
+flabel metal4 1020 10010 1020 10010 0 FreeSans 240 0 0 0 b0b
+flabel metal4 8 10141 8 10141 0 FreeSans 240 0 0 0 b2b
+flabel metal4 2 10397 2 10397 0 FreeSans 240 0 0 0 b2
+flabel metal4 1017 10270 1017 10270 0 FreeSans 240 0 0 0 b0
+flabel metal4 1017 8764 1017 8764 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1017 8504 1017 8504 0 FreeSans 240 0 0 0 b0
+flabel metal4 5 8634 5 8634 0 FreeSans 240 0 0 0 b1
+flabel metal4 5 8891 5 8891 0 FreeSans 240 0 0 0 b1b
+flabel metal4 1016 7252 1016 7252 0 FreeSans 240 0 0 0 b0
+flabel metal4 1017 6995 1017 6995 0 FreeSans 240 0 0 0 b0b
+flabel metal4 7 7126 7 7126 0 FreeSans 240 0 0 0 b3
+flabel metal4 2 7383 2 7383 0 FreeSans 240 0 0 0 b3b
+flabel metal4 1015 5749 1015 5749 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1015 5488 1015 5488 0 FreeSans 240 0 0 0 b0
+flabel metal4 4 5619 4 5619 0 FreeSans 240 0 0 0 b1b
+flabel metal4 5 5877 5 5877 0 FreeSans 240 0 0 0 b1
+flabel metal4 1019 4244 1019 4244 0 FreeSans 240 0 0 0 b0
+flabel metal4 1021 3984 1021 3984 0 FreeSans 240 0 0 0 b0b
+flabel metal4 5 4113 5 4113 0 FreeSans 240 0 0 0 b2
+flabel metal4 9 4369 9 4369 0 FreeSans 240 0 0 0 b2b
+flabel metal4 1021 2733 1021 2733 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1013 2476 1013 2476 0 FreeSans 240 0 0 0 b0
+flabel metal4 4 2607 4 2607 0 FreeSans 240 0 0 0 b1
+flabel metal4 4 2863 4 2863 0 FreeSans 240 0 0 0 b1b
+flabel metal4 7 12502 7 12502 0 FreeSans 240 0 0 0 b0b
+flabel metal4 2 12755 2 12755 0 FreeSans 240 0 0 0 b0
+flabel metal4 1018 12629 1018 12629 0 FreeSans 240 0 0 0 b1
+flabel metal4 1021 12368 1021 12368 0 FreeSans 240 0 0 0 b1b
+flabel metal4 5 10994 5 10994 0 FreeSans 240 0 0 0 b0
+flabel metal4 5 11252 5 11252 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1015 11123 1015 11123 0 FreeSans 240 0 0 0 b2
+flabel metal4 1018 10862 1018 10862 0 FreeSans 240 0 0 0 b2b
+flabel metal4 4 9486 4 9486 0 FreeSans 240 0 0 0 b0b
+flabel metal4 8 9740 8 9740 0 FreeSans 240 0 0 0 b0
+flabel metal4 1023 9616 1023 9616 0 FreeSans 240 0 0 0 b1b
+flabel metal4 1021 9356 1021 9356 0 FreeSans 240 0 0 0 b1
+flabel metal4 7 7976 7 7976 0 FreeSans 240 0 0 0 b0
+flabel metal4 5 8241 5 8241 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1017 8109 1017 8109 0 FreeSans 240 0 0 0 b3b
+flabel metal4 1019 7850 1019 7850 0 FreeSans 240 0 0 0 b3
+flabel metal4 5 6475 5 6475 0 FreeSans 240 0 0 0 b0b
+flabel metal4 7 6728 7 6728 0 FreeSans 240 0 0 0 b0
+flabel metal4 1019 6600 1019 6600 0 FreeSans 240 0 0 0 b1
+flabel metal4 1022 6343 1022 6343 0 FreeSans 240 0 0 0 b1b
+flabel metal4 4 4963 4 4963 0 FreeSans 240 0 0 0 b0
+flabel metal4 6 5222 6 5222 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1018 5094 1018 5094 0 FreeSans 240 0 0 0 b2b
+flabel metal4 1017 4838 1017 4838 0 FreeSans 240 0 0 0 b2
+flabel metal4 5 3457 5 3457 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1 3713 1 3713 0 FreeSans 240 0 0 0 b0
+flabel metal4 1018 3588 1018 3588 0 FreeSans 240 0 0 0 b1b
+flabel metal4 1019 3324 1019 3324 0 FreeSans 240 0 0 0 b1
+flabel metal4 2 1951 2 1951 0 FreeSans 240 0 0 0 b0
+flabel metal4 4 2208 4 2208 0 FreeSans 240 0 0 0 b0b
+flabel metal4 1016 2080 1016 2080 0 FreeSans 240 0 0 0 b4b
+flabel metal4 1018 1822 1018 1822 0 FreeSans 240 0 0 0 b4
+flabel metal1 133 1745 133 1745 0 FreeSans 240 90 0 0 res_in0
+flabel metal1 117 208 151 264 0 FreeSans 240 90 0 0 dum_in0
+flabel metal1 117 13772 151 13828 0 FreeSans 240 90 0 0 res_out0
+flabel metal1 142 15137 142 15137 0 FreeSans 240 0 0 0 dum_out0
+flabel metal1 781 15143 781 15143 0 FreeSans 240 0 0 0 dum_in1
+flabel metal1 892 13521 892 13521 0 FreeSans 240 90 0 0 res_in1
+flabel metal1 963 72 963 72 0 FreeSans 240 0 0 0 dum_out1
+flabel metal1 875 1399 909 1467 0 FreeSans 240 90 0 0 res_out1
+flabel metal3 320 3095 320 3095 0 FreeSans 240 90 0 0 out0_1_0
+flabel metal3 445 5362 445 5362 0 FreeSans 240 90 0 0 out0_0_1
+flabel metal3 450 8384 450 8384 0 FreeSans 240 90 0 0 out0_0_2
+flabel metal3 450 11412 450 11412 0 FreeSans 240 90 0 0 out0_0_3
+flabel metal3 452 2328 452 2328 0 FreeSans 240 90 0 0 out0_0_0
+flabel metal3 579 12878 579 12878 0 FreeSans 240 90 0 0 out1_0_0
+flabel metal3 579 9871 579 9871 0 FreeSans 240 90 0 0 out1_0_1
+flabel metal3 314 6895 314 6895 0 FreeSans 240 90 0 0 out1_0_2
+flabel metal3 577 7478 577 7478 0 FreeSans 240 90 0 0 out_3
+flabel metal3 576 3162 576 3162 0 FreeSans 240 90 0 0 out1_0_3
+flabel metal3 575 1673 575 1673 0 FreeSans 240 90 0 0 out4
+flabel metal3 830 3854 830 3854 0 FreeSans 240 90 0 0 out1_1_1
+flabel metal3 708 12140 708 12140 0 FreeSans 240 90 0 0 out1_1_0
+flabel metal3 187 4644 187 4644 0 FreeSans 240 90 0 0 out0_2
+flabel metal3 830 9867 830 9867 0 FreeSans 240 90 0 0 out1_2
+flabel metal4 208 12899 208 12899 0 FreeSans 240 0 0 0 out_5
+flabel metal3 448 13649 448 13649 0 FreeSans 240 90 0 0 in_5
+<< end >>

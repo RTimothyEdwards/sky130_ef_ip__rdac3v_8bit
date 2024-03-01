@@ -1,0 +1,13 @@
+cace/*spice
+cace/xschemrc
+cace/sky130_ef_ip__rdac3v_8bit_out.txt
+ngspice/*
+netlist/*
+spice/*
+mag/*.ext
+mag/*.res.ext
+mag/*.nodes
+mag/*.sim
+xschem/*.spice
+xschem/xschemrc
+.spiceinit

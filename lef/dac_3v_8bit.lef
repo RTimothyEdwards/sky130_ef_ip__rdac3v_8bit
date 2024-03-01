@@ -1,0 +1,164 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO dac_3v_8bit
+  CLASS BLOCK ;
+  FOREIGN dac_3v_8bit ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 129.695 BY 121.595 ;
+  PIN b0
+    PORT
+      LAYER met1 ;
+        RECT -1.000 3.475 2.825 3.765 ;
+    END
+  END b0
+  PIN b1
+    PORT
+      LAYER met1 ;
+        RECT -1.000 11.615 2.825 11.905 ;
+    END
+  END b1
+  PIN b2
+    PORT
+      LAYER met1 ;
+        RECT -1.000 19.755 2.825 20.045 ;
+    END
+  END b2
+  PIN b3
+    PORT
+      LAYER met1 ;
+        RECT -1.000 27.895 2.825 28.185 ;
+    END
+  END b3
+  PIN b4
+    PORT
+      LAYER met1 ;
+        RECT -1.000 36.035 2.825 36.325 ;
+    END
+  END b4
+  PIN b5
+    PORT
+      LAYER met1 ;
+        RECT -1.000 44.175 2.825 44.465 ;
+    END
+  END b5
+  PIN b6
+    PORT
+      LAYER met1 ;
+        RECT -1.000 52.315 2.825 52.605 ;
+    END
+  END b6
+  PIN b7
+    PORT
+      LAYER met1 ;
+        RECT -1.000 60.455 2.825 60.745 ;
+    END
+  END b7
+  PIN out
+    PORT
+      LAYER met1 ;
+        RECT 75.025 119.775 76.300 122.595 ;
+    END
+  END out
+  PIN vdd
+    PORT
+      LAYER met4 ;
+        RECT -1.000 81.400 79.300 84.500 ;
+    END
+    PORT
+      LAYER met3 ;
+        RECT 31.695 -1.000 34.070 1.150 ;
+    END
+  END vdd
+  PIN vss
+    PORT
+      LAYER met3 ;
+        RECT -1.000 76.265 26.870 79.635 ;
+    END
+    PORT
+      LAYER met3 ;
+        RECT 124.185 0.330 127.715 2.280 ;
+    END
+  END vss
+  PIN ena
+    PORT
+      LAYER met1 ;
+        RECT -1.000 67.695 21.515 67.875 ;
+    END
+  END ena
+  PIN dvdd
+    PORT
+      LAYER met2 ;
+        RECT -1.000 71.230 2.985 72.695 ;
+    END
+  END dvdd
+  PIN dvss
+    PORT
+      LAYER met2 ;
+        RECT -1.000 73.455 9.055 75.350 ;
+    END
+  END dvss
+  PIN Vhigh
+    PORT
+      LAYER met3 ;
+        RECT 34.480 -1.000 35.665 7.215 ;
+    END
+  END Vhigh
+  PIN Vlow
+    PORT
+      LAYER met3 ;
+        RECT 122.735 -1.000 123.840 7.715 ;
+    END
+  END Vlow
+  OBS
+      LAYER li1 ;
+        RECT 0.330 0.430 129.265 121.165 ;
+      LAYER met1 ;
+        RECT 0.330 119.495 74.745 121.005 ;
+        RECT 76.580 119.495 129.365 121.005 ;
+        RECT 0.330 68.155 129.365 119.495 ;
+        RECT 21.795 67.415 129.365 68.155 ;
+        RECT 0.330 61.025 129.365 67.415 ;
+        RECT 3.105 60.175 129.365 61.025 ;
+        RECT 0.330 52.885 129.365 60.175 ;
+        RECT 3.105 52.035 129.365 52.885 ;
+        RECT 0.330 44.745 129.365 52.035 ;
+        RECT 3.105 43.895 129.365 44.745 ;
+        RECT 0.330 36.605 129.365 43.895 ;
+        RECT 3.105 35.755 129.365 36.605 ;
+        RECT 0.330 28.465 129.365 35.755 ;
+        RECT 3.105 27.615 129.365 28.465 ;
+        RECT 0.330 20.325 129.365 27.615 ;
+        RECT 3.105 19.475 129.365 20.325 ;
+        RECT 0.330 12.185 129.365 19.475 ;
+        RECT 3.105 11.335 129.365 12.185 ;
+        RECT 0.330 4.045 129.365 11.335 ;
+        RECT 3.105 3.195 129.365 4.045 ;
+        RECT 0.330 0.330 129.365 3.195 ;
+      LAYER met2 ;
+        RECT 1.520 75.630 128.670 121.035 ;
+        RECT 9.335 73.175 128.670 75.630 ;
+        RECT 1.520 72.975 128.670 73.175 ;
+        RECT 3.265 70.950 128.670 72.975 ;
+        RECT 1.520 1.045 128.670 70.950 ;
+      LAYER met3 ;
+        RECT 4.130 80.035 129.370 86.610 ;
+        RECT 27.270 75.865 129.370 80.035 ;
+        RECT 4.130 8.115 129.370 75.865 ;
+        RECT 4.130 7.615 122.335 8.115 ;
+        RECT 4.130 1.550 34.080 7.615 ;
+        RECT 4.130 0.000 31.295 1.550 ;
+        RECT 36.065 0.000 122.335 7.615 ;
+        RECT 124.240 2.680 129.370 8.115 ;
+        RECT 124.185 -1.000 125.985 0.330 ;
+        RECT 128.115 0.000 129.370 2.680 ;
+      LAYER met4 ;
+        RECT 79.700 81.000 129.375 84.500 ;
+        RECT 18.160 0.330 129.375 81.000 ;
+      LAYER met5 ;
+        RECT 38.415 8.850 114.635 70.550 ;
+  END
+END dac_3v_8bit
+END LIBRARY
+

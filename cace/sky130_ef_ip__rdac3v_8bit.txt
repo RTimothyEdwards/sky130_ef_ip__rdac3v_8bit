@@ -1,0 +1,617 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name:		sky130_ef_ip__rdac3v_8bit
+description:	8-bit DAC with 3.3V supply and enable input
+commit:		N/A
+PDK:		sky130A
+
+cace_format:	4.0
+
+authorship {
+	designer:	Tim Edwards
+	company:	Efabless Corporation
+	creation_date:	November 21, 2023
+	license:	Apache 2.0
+}
+
+# Paths to various files
+
+paths {
+	root:		..
+	documentation:	doc
+	schematic:	xschem
+	magic:		mag
+	layout:		gds
+	lvs_netlist:	netlist/lvs
+	rcx_netlist:	netlist/rcx
+	schem_netlist:	netlist/schem
+	testbench:	cace
+	simulation:	ngspice
+	logs:		ngspice/log
+}
+
+# Project dependencies
+
+dependencies {
+	name:		sky130_ef_ip__samplehold
+	path:		../..
+	repository:	https://github/RTimothyEdwards/sky130_ef_ip__samplehold
+	commit:		N/A
+}
+
+# Pin names and descriptions
+
+pins {
+	name:		b7:0
+	description:	Digital input (8 bits)
+	type:		digital
+	direction:	input
+	Vmin:		vss - 0.3
+	Vmax:		dvdd + 0.3
+
+ 	+
+	name:		ena
+	description:	Enable input (active low)
+	type:		digital
+	direction:	input
+	Vmin:		vss - 0.3
+	Vmax:		dvdd + 0.3
+
+ 	+
+	name:		Vhigh
+	description:	Reference high voltage
+	type:		signal
+	direction:	input
+	Vmin:		Vlow	
+	Vmax:		vdd
+
+ 	+
+	name:		Vlow
+	description:	Reference low voltage
+	type:		signal
+	direction:	input
+	Vmin:		vss
+	Vmax:		Vhigh
+
+ 	+
+	name:		out
+	description:	DAC voltage output
+	type:		signal
+	direction:	output
+	Vmin:		Vlow
+	Vmax:		Vhigh
+
+ 	+
+	name:		dvdd
+	description:	Positive digital power supply
+	type:		power
+	direction:	inout
+	Vmin:		1.5
+	Vmax:		2.1
+
+ 	+
+	name:		dvss
+	description:	Digital ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+
+ 	+
+	name:		vdd
+	description:	Positive analog power supply
+	type:		power
+	direction:	inout
+	Vmin:		3.0
+	Vmax:		3.6
+
+ 	+
+	name:		vss
+	description:	Analog ground
+	type:		ground
+	direction:	inout
+	Vmin:		-0.3
+	Vmax:		0.3
+}
+
+# Default values for electrical parameter measurement conditions
+# if not otherwise specified
+
+default_conditions {
+	name:		Vdvdd
+	description:	Digital power supply voltage
+	display:	dvdd
+	unit:		V
+	typical:	1.8
+
+	+
+	name:		Vdvss
+	description:	Digital ground
+	display:	dvss
+	unit:		V
+	typical:	0
+
+	+
+	name:		Vvdd
+	description:	Analog power supply voltage
+	display:	vdd
+	unit:		V
+	typical:	3.3
+
+	+
+	name:		Vvss
+	description:	Analog ground
+	display:	vss
+	unit:		V
+	typical:	0
+
+	+
+	name:		Rout
+	description:	Output load resistance
+	display:	RLoad
+	unit:		M{ohms}
+	typical:	100
+
+	+
+	name:		Cout
+	description:	Output load capatitance
+	display:	CLoad
+	unit:		fF
+	maximum:	100
+
+	+
+	name:		Vlow
+	description:	DAC low voltage reference
+	display:	Vlow
+	unit:		V
+	typical:	0
+
+	+
+	name:		Vhigh
+	description:	DAC high voltage reference
+	display:	Vhigh
+	unit:		V
+	typical:	3.3
+
+	+
+	name:		ena
+	description:	DAC enable
+	display:	ena
+	typical:	1
+
+	+
+	name:		b[7:0]
+	description:	DAC digital input value
+	display:	b[7:0]
+	typical:	00000000
+
+	+
+	name:		temperature
+	description:	Ambient temperature
+	display:	Temp
+	unit:		{degrees}C
+	minimum:	-40
+	typical:	27
+	maximum:	130
+
+	+
+	name:		corner
+	description:	Process corner
+	display:	Corner
+	minimum:	ss
+	typical:	tt
+	maximum:	ff
+
+	+
+	name:		iterations
+	description:	Iterations to run
+	display:	Iterations
+	minimum:	1
+	maximum:	10
+	step:		linear
+	stepsize:	1
+}
+
+# List of electrical parameters to be measured and their specified limits
+
+electrical_parameters {
+	name:		Idd_enabled
+	status:		skip
+	description:	Current draw through analog supply, DAC enabled
+	display:	Idd
+	unit: 		{micro}A
+	spec {
+		minimum:	any
+		typical:	170
+		maximum:	250	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_vdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: b[7:0]
+		maximum: 11111111
+		typical: 10000000
+		minimum: 00000000
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name:		Idd_disabled
+	status:		skip
+	description:	Current draw through analog supply, DAC disabled
+	display:	Standby current
+	unit:		{micro}A
+	spec {
+		minimum:	any
+		typical:	170
+		maximum:	250	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	dccurrent_vdd.spice
+		format:		ascii .data null result
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: b[7:0]
+		maximum: 11111111
+		minimum: 00000000
+
+		+
+		name: ena
+		typical: 0
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name:		INL
+	status:		skip
+	description:	integral nonlinearity (INL)
+	display:	INL
+	unit:		lsb
+	spec {
+		minimum:	-2	fail
+		typical:	0
+		maximum:	2	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	voltage_output.spice
+		format:		ascii .data null result
+	}
+	measure {
+		tool:		octave-cli
+		filename:	inl.m
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: b[7:0]
+		maximum: 11111111
+		typical: 11111100
+		minimum: 00000000
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name:		INL_Monte_Carlo
+	status:		skip
+	description:	Integral nonlinearity (INL), Monte Carlo
+	display:	INL (Monte Carlo)
+	unit:		lsb
+	spec {
+		minimum:	-2	fail
+		typical:	0
+		maximum:	2	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	voltage_output.spice
+		format:		ascii .data null result
+	}
+	measure {
+		tool:		octave
+		filename:	inl.m
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: b[7:0]
+		maximum: 11100000
+		minimum: 00011111
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: iterations
+		minimum: 1
+		maximum: 10
+		step: linear
+		stepsize: 1
+
+		+
+		name: corner
+		typical: mc
+	}
+
+	+
+	name:		DNL
+	status:		skip
+	description:	Differential nonlinearity (DNL)
+	display:	DNL
+	unit:		lsb
+	spec {
+		minimum:	-2	fail
+		typical:	0
+		maximum:	2	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	voltage_output.spice
+		format:		ascii .data null result
+		collate:	b[7:0]
+	}
+	measure {
+		tool:		octave
+		filename:	dnl.m
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: b[7:0]
+		enumerate: 00000000 00000001 00001111 00010000 \
+			   00011111 00100000 01111111 10000000 \
+			   01111111 10000000 10000001 11111110 \
+			   11111111
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+
+	+
+	name:		offset_error
+	status:		skip
+	description:	Output offset error
+	display:	Offset Error
+	unit:		%FSR
+	spec {
+		minimum:	-0.02	fail
+		typical:	0
+		maximum:	0.01	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	voltage_output.spice
+		format:		ascii .data null result
+	}
+	measure {
+		tool:		octave
+		filename:	offset_err.m
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: temperature
+		maximum: 110
+		typical: 27
+		minimum: -40
+
+		+
+		name: b[7:0]
+		maximum: 11100110
+		minimum: 00011001
+
+		+
+		name: corner
+		minimum: ss
+		typical: tt
+		maximum: ff
+	}
+
+	+
+	name:		gain_error
+	status:		skip
+	description:	Output gain error
+	display:	Gain Error
+	unit:		%FSR
+	spec {
+		minimum:	-0.02	fail
+		typical:	0
+		maximum:	0.02	fail
+	}
+	simulate {
+		tool:		ngspice
+		template:	voltage_output.spice
+		format:		ascii .data null result
+		collate:	b[7:0]
+	}
+	measure {
+		tool:		octave
+		filename:	gain_err.m
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: temperature
+		maximum: 110
+		typical: 27
+		minimum: -40
+
+		+
+		name: b[7:0]
+		maximum: 11100110
+		minimum: 00011001
+		note: gain measured at 10% and 90% values
+
+		+
+		name: corner
+		minimum: ss
+		typical: tt
+		maximum: ff
+	}
+
+	+
+	name:		transient_response
+	status:		skip
+	description:	Digital sine wave transient response
+	display:	out
+	unit:		V
+	simulate {
+		tool:		ngspice
+		template:	transient_sine.spice
+		format:		ascii .data time result
+	}
+	plot {
+		filename: transient_sine.png
+		xaxis: time
+		yaxis: result
+	}
+	variables {
+		name: time
+		display: Time
+		unit: ms
+	}
+	conditions {
+		name: Vdvdd
+		typical: 1.8
+
+		+
+		name: Vvdd
+		typical: 3.3
+
+		+
+		name: index
+		typical: 1
+
+		+
+		name: Tmax
+		display: Simulation time
+		unit: ns
+		typical: 4000
+
+		+
+		name: temperature
+		typical: 27
+
+		+
+		name: corner
+		typical: tt
+	}
+}
+
+# List of physical parameters to be measured and their specified limits
+
+physical_parameters {
+	name:		area
+	status:		skip
+	description:	Total circuit layout area
+	display:	area
+	unit: 		{micro}m{squared}
+	spec {
+		maximum:	50000	fail
+	}
+	evaluate {
+		tool:		cace_area
+	}
+
+	+
+	name:		LVS_errors
+	description:	LVS errors
+	display:	LVS errors
+	spec {
+		maximum:	0	fail
+	}
+	evaluate {
+		tool:		cace_lvs run_project_lvs.tcl
+	}
+
+	+
+	name:		DRC_errors
+	status:		skip
+	description:	DRC errors
+	display:	DRC errors
+	spec {
+		maximum:	0	fail
+	}
+	evaluate {
+		tool:		cace_drc
+	}
+}
