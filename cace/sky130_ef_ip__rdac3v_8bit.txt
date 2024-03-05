@@ -31,12 +31,12 @@ paths {
 	logs:		ngspice/log
 }
 
-# Project dependencies
+# Project dependencies (note that paths are relative to project root)
 
 dependencies {
 	name:		sky130_ef_ip__samplehold
-	path:		../..
-	repository:	https://github/RTimothyEdwards/sky130_ef_ip__samplehold
+	path:		..
+	repository:	https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold
 	commit:		N/A
 }
 
