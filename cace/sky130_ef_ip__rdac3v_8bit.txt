@@ -561,6 +561,10 @@ electrical_parameters {
 		typical: 4000
 
 		+
+		name: frequency
+		typical: 2
+
+		+
 		name: temperature
 		typical: 27
 
