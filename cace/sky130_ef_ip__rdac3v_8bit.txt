@@ -202,15 +202,6 @@ default_conditions {
 	minimum:	ss
 	typical:	tt
 	maximum:	ff
-
-	+
-	name:		iterations
-	description:	Iterations to run
-	display:	Iterations
-	minimum:	1
-	maximum:	10
-	step:		linear
-	stepsize:	1
 }
 
 # List of electrical parameters to be measured and their specified limits
@@ -378,6 +369,8 @@ electrical_parameters {
 
 		+
 		name: iterations
+		description:	Iterations to run
+		display:	Iterations
 		minimum: 1
 		maximum: 10
 		step: linear
