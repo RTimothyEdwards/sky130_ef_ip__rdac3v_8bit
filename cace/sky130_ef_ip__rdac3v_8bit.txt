@@ -345,6 +345,7 @@ electrical_parameters {
 		tool:		ngspice
 		template:	voltage_output.spice
 		format:		ascii .data null result
+		collate:	iterations
 	}
 	measure {
 		tool:		octave
