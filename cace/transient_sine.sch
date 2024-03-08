@@ -155,7 +155,7 @@ C {devices/res.sym} -420 310 0 0 {name=RSUB
 value=0.01
 device=resistor}
 C {devices/gnd.sym} -420 340 0 0 {name=l1 lab=GND}
-C {xschem/sky130_ef_ip__rdac3v_8bit.sym} 130 -140 0 0 {name=XDUT}
+C {sky130_ef_ip__rdac3v_8bit.sym} 130 -140 0 0 {name=XDUT}
 C {devices/code_shown.sym} -1150 -10 0 0 {name="XSPICE MODELS" only_toplevel=false value="
 .model sinegen d_source(input_file=./cace/sine\{frequency\}x4.dat)
 .model dtoa dac_bridge(out_high=\{Vdvdd\} out_low=\{Vdvss\} t_rise=5.0e-10 t_fall=5.0e-10)

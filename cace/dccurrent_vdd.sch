@@ -185,4 +185,4 @@ C {devices/res.sym} -420 310 0 0 {name=RSUB
 value=0.01
 device=resistor}
 C {devices/gnd.sym} -420 340 0 0 {name=l1 lab=GND}
-C {xschem/sky130_ef_ip__rdac3v_8bit.sym} 130 -140 0 0 {name=XDUT}
+C {sky130_ef_ip__rdac3v_8bit.sym} 130 -140 0 0 {name=XDUT}
