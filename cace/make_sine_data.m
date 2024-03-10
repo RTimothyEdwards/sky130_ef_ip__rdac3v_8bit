@@ -10,8 +10,9 @@
 # Analyze 10 cycles of data
 num_cycles = 4;
 
-# Divide each period into 1024 samples
-period_div = 1024;	
+# Set the time step (rate at which digital system provides input
+# to the DAC) to 1MHz
+tstep = 1e-6
 
 # Compute for 8 bit output
 num_bits = 8;
@@ -19,16 +20,16 @@ num_bits = 8;
 # Midpoint value
 halfvalue = 2^(num_bits - 1) - 0.5;
 
-# Compute for three frequencies: 1, 2, and 3 (MHz)
-frequencies = [1; 2; 3];
+# Compute for three frequencies: 10, 20, and 30 (kHz)
+frequencies = [10; 20; 30];
 
 # Find the time step per output value
 for fi = 1 : length(frequencies),
    freq = frequencies(fi);
-   freqHz = freq * 1.0E6;
+   freqHz = freq * 1.0E3;
    period = 1 / freqHz;
-   tstep = period / period_div;
-   steps = (period_div * num_cycles) + 1;
+   period_div = period / tstep;
+   steps = floor(period_div * num_cycles) + 1;
    maxsteps = tstep * steps;
 
    timevals = [0.0: tstep: maxsteps];

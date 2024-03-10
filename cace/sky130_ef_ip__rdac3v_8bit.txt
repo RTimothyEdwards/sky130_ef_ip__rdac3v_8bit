@@ -562,7 +562,8 @@ electrical_parameters {
 
 		+
 		name: frequency
-		typical: 2
+		note: units are kHz, but value is part of data file name
+		typical: 20
 
 		+
 		name: temperature

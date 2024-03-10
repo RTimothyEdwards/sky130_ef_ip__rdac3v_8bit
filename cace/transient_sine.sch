@@ -132,7 +132,7 @@ C {devices/vsource.sym} 100 -400 0 0 {name=Vdvdd value="DC \{Vdvdd\}" savecurren
 C {devices/lab_pin.sym} 200 -430 0 1 {name=p34 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} -120 -370 0 0 {name=p35 sig_type=std_logic lab=VSUB}
 C {devices/code_shown.sym} -1150 -220 0 0 {name=CONTROL only_toplevel=false value=".control
-tran 5.0e-10 \{Tmax\}
+tran 5.0e-6 [\{frequency\} * 5.0e-6]
 set wr_singlescale
 wrdata \{simpath\}/\{filename\}_\{N\}.data V(out)
 quit
@@ -158,7 +158,7 @@ C {devices/gnd.sym} -420 340 0 0 {name=l1 lab=GND}
 C {sky130_ef_ip__rdac3v_8bit.sym} 130 -140 0 0 {name=XDUT}
 C {devices/code_shown.sym} -1150 -10 0 0 {name="XSPICE MODELS" only_toplevel=false value="
 .model sinegen d_source(input_file=./cace/sine\{frequency\}x4.dat)
-.model dtoa dac_bridge(out_high=\{Vdvdd\} out_low=\{Vdvss\} t_rise=5.0e-10 t_fall=5.0e-10)
+.model dtoa dac_bridge(out_high=\{Vdvdd\} out_low=\{Vdvss\} t_rise=5.0e-9 t_fall=5.0e-9)
 "}
 C {devices/dac_bridge.sym} -150 -70 0 0 {name=A1 dac_bridge_model=dtoa}
 C {devices/dac_bridge.sym} -150 -90 0 0 {name=A2 dac_bridge_model=dtoa}
