@@ -1501,7 +1501,7 @@ array 0 7 2132 0 0 15270
 timestamp 1653060931
 transform 1 0 8398 0 1 322
 box -20 -7 1049 15263
-use follower_amp  follower_amp_0 ../../sample_and_hold/mag
+use follower_amp  follower_amp_0 ../../sky130_ef_ip__samplehold/mag
 timestamp 1652928066
 transform 0 1 14879 1 0 21502
 box -4547 -3901 2817 6641
