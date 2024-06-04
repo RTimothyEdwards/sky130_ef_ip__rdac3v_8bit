@@ -1,0 +1,499 @@
+#--------------------------------------------------------------
+# CACE circuit characterization file
+#--------------------------------------------------------------
+
+name: sky130_ef_ip__rdac3v_8bit
+description: 8-bit DAC with 3.3V supply and enable input
+commit: N/A
+PDK: sky130A
+cace_format: 5.0
+
+authorship:
+  designer: Tim Edwards
+  company: Efabless Corporation
+  creation_date: November 21, 2023
+  license: Apache 2.0
+ 
+paths:
+  root: ..
+  documentation: doc
+  schematic: xschem
+  magic: mag
+  layout: gds
+  netlist: netlist
+
+dependencies:
+  sky130_ef_ip__samplehold:
+    path: ..
+    repository: https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold
+    commit: N/A
+
+pins:
+  b7:0:
+    description: Digital input (8 bits)
+    type: digital
+    direction: input
+    Vmin: vss - 0.3
+    Vmax: dvdd + 0.3
+  ena:
+    description: Enable input (active low)
+    type: digital
+    direction: input
+    Vmin: vss - 0.3
+    Vmax: dvdd + 0.3
+  Vhigh:
+    description: Reference high voltage
+    type: signal
+    direction: input
+    Vmin: Vlow
+    Vmax: vdd
+  Vlow:
+    description: Reference low voltage
+    type: signal
+    direction: input
+    Vmin: vss
+    Vmax: Vhigh
+  out:
+    description: DAC voltage output
+    type: signal
+    direction: output
+    Vmin: Vlow
+    Vmax: Vhigh
+  dvdd:
+    description: Positive digital power supply
+    type: power
+    direction: inout
+    Vmin: '1.5'
+    Vmax: '2.1'
+  dvss:
+    description: Digital ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+  vdd:
+    description: Positive analog power supply
+    type: power
+    direction: inout
+    Vmin: '3.0'
+    Vmax: '3.6'
+  vss:
+    description: Analog ground
+    type: ground
+    direction: inout
+    Vmin: '-0.3'
+    Vmax: '0.3'
+
+default_conditions:
+  Vdvdd:
+    description: Digital power supply voltage
+    display: dvdd
+    unit: V
+    typical: '1.8'
+  Vdvss:
+    description: Digital ground
+    display: dvss
+    unit: V
+    typical: '0'
+  Vvdd:
+    description: Analog power supply voltage
+    display: vdd
+    unit: V
+    typical: '3.3'
+  Vvss:
+    description: Analog ground
+    display: vss
+    unit: V
+    typical: '0'
+  Rout:
+    description: Output load resistance
+    display: RLoad
+    unit: MΩ
+    typical: '100'
+  Cout:
+    description: Output load capatitance
+    display: CLoad
+    unit: fF
+    maximum: '100'
+  Vlow:
+    description: DAC low voltage reference
+    display: Vlow
+    unit: V
+    typical: '0'
+  Vhigh:
+    description: DAC high voltage reference
+    display: Vhigh
+    unit: V
+    typical: '3.3'
+  ena:
+    description: DAC enable
+    display: ena
+    typical: '1'
+  b[7:0]:
+    description: DAC digital input value
+    display: b[7:0]
+    typical: '00000000'
+  temperature:
+    description: Ambient temperature
+    display: Temp
+    unit: °C
+    minimum: '-40'
+    typical: '27'
+    maximum: '130'
+  corner:
+    description: Process corner
+    display: Corner
+    minimum: ss
+    typical: tt
+    maximum: ff
+
+electrical_parameters:
+  Idd_enabled:
+    description: Current draw through analog supply, DAC enabled
+    display: Idd
+    unit: µA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '170'
+      maximum:
+        value: '250'
+        fail: true
+    simulate:
+      ngspice:
+        template: dccurrent_vdd.spice
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      b[7:0]:
+        maximum: '11111111'
+        typical: '10000000'
+        minimum: '00000000'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+  Idd_disabled:
+    description: Current draw through analog supply, DAC disabled
+    display: Standby current
+    unit: µA
+    spec:
+      minimum:
+        value: any
+      typical:
+        value: '170'
+      maximum:
+        value: '250'
+        fail: true
+    simulate:
+      ngspice:
+        template: dccurrent_vdd.spice
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      b[7:0]:
+        maximum: '11111111'
+        minimum: '00000000'
+      ena:
+        typical: '0'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+  INL:
+    description: integral nonlinearity (INL)
+    display: INL
+    unit: lsb
+    spec:
+      minimum:
+        value: '-2'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '2'
+        fail: true
+    simulate:
+      ngspice:
+        template: voltage_output.spice
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    measure:
+    - tool: octave-cli
+      filename: inl.m
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      b[7:0]:
+        maximum: '11111111'
+        typical: '11111100'
+        minimum: '00000000'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+  INL_Monte_Carlo:
+    description: Integral nonlinearity (INL), Monte Carlo
+    display: INL (Monte Carlo)
+    unit: lsb
+    spec:
+      minimum:
+        value: '-2'
+        fail: true
+        measurement: std3n-above
+      typical:
+        value: '0'
+      maximum:
+        value: '2'
+        fail: true
+        measurement: std3p-below
+    simulate:
+      ngspice:
+        template: voltage_output.spice
+        collate: iterations
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    measure:
+    - tool: octave
+      filename: inl.m
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      b[7:0]:
+        maximum: '11100000'
+        minimum: '00011111'
+      temperature:
+        typical: '27'
+      iterations:
+        description: Iterations to run
+        display: Iterations
+        minimum: '1'
+        maximum: '100'
+        step: linear
+        stepsize: '1'
+      corner:
+        typical: mc
+  DNL:
+    description: Differential nonlinearity (DNL)
+    display: DNL
+    unit: lsb
+    spec:
+      minimum:
+        value: '-2'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '2'
+        fail: true
+    simulate:
+      ngspice:
+        template: voltage_output.spice
+        collate: b[7:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    measure:
+    - tool: octave
+      filename: dnl.m
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      b[7:0]:
+        enumerate:
+        - '00000000'
+        - '00000001'
+        - '00001111'
+        - '00010000'
+        - '00011111'
+        - '00100000'
+        - '01111111'
+        - '10000000'
+        - '01111111'
+        - '10000000'
+        - '10000001'
+        - '11111110'
+        - '11111111'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+  offset_error:
+    description: Output offset error
+    display: Offset Error
+    unit: '%FSR'
+    spec:
+      minimum:
+        value: '-0.02'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '0.01'
+        fail: true
+    simulate:
+      ngspice:
+        template: voltage_output.spice
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    measure:
+    - tool: octave
+      filename: offset_err.m
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      temperature:
+        maximum: '110'
+        typical: '27'
+        minimum: '-40'
+      b[7:0]:
+        maximum: '11100110'
+        minimum: '00011001'
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+  gain_error:
+    description: Output gain error
+    display: Gain Error
+    unit: '%FSR'
+    spec:
+      minimum:
+        value: '-0.02'
+        fail: true
+      typical:
+        value: '0'
+      maximum:
+        value: '0.02'
+        fail: true
+    simulate:
+      ngspice:
+        template: voltage_output.spice
+        collate: b[7:0]
+        format: ascii
+        suffix: .data
+        variables:
+        - 'null'
+        - result
+    measure:
+    - tool: octave
+      filename: gain_err.m
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      temperature:
+        maximum: '110'
+        typical: '27'
+        minimum: '-40'
+      b[7:0]:
+        maximum: '11100110'
+        minimum: '00011001'
+        note: gain measured at 10% and 90% values
+      corner:
+        minimum: ss
+        typical: tt
+        maximum: ff
+  transient_response:
+    status: skip
+    description: Digital sine wave transient response
+    display: out
+    unit: V
+    simulate:
+      ngspice:
+        template: transient_sine.spice
+        format: ascii
+        suffix: .data
+        variables:
+        - time
+        - result
+    plot:
+      filename: transient_sine.png
+      xaxis: time
+      yaxis: result
+    variables:
+      time:
+        display: Time
+        unit: ms
+    conditions:
+      Vdvdd:
+        typical: '1.8'
+      Vvdd:
+        typical: '3.3'
+      index:
+        typical: '1'
+      Tmax:
+        display: Simulation time
+        unit: ns
+        typical: '4000'
+      frequency:
+        note: units are kHz, but value is part of data file name
+        typical: '20'
+      temperature:
+        typical: '27'
+      corner:
+        typical: tt
+
+physical_parameters:
+  area:
+    description: Total circuit layout area
+    display: area
+    unit: µm²
+    spec:
+      maximum:
+        value: '50000'
+        fail: true
+    evaluate: cace_area
+  LVS_errors:
+    description: LVS errors
+    display: LVS errors
+    spec:
+      maximum:
+        value: '0'
+        fail: true
+    evaluate:
+      cace_lvs:
+        script: run_project_lvs.tcl
+  DRC_errors:
+    description: DRC errors
+    display: DRC errors
+    spec:
+      maximum:
+        value: '0'
+        fail: true
+    evaluate: cace_drc
