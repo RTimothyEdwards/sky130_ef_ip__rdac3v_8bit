@@ -1,0 +1,403 @@
+<HTML>
+<BODY>
+<H1> CACE 4.0 datasheet </H1>
+
+
+<HR>
+
+<FONT size=+1><B>sky130_ef_ip__rdac3v_8bit</B></FONT>
+
+
+<HR>
+
+<I> 8-bit DAC with 3.3V supply and enable input </I><BR><BR>
+<TABLE border="1" frame="box" rules="none" width="40%" cellspacing="0"
+	cellpadding="2" bgcolor="#ffffdd">
+<TBODY>
+<TR>
+<TD> PDK:
+<TD> sky130A
+</TR>
+</TBODY>
+</TABLE>
+<BR>
+
+<TABLE border="1" frame="box" rules="none" width="40%" cellspacing="0"
+	cellpadding="2" bgcolor="#ffffdd">
+<TBODY>
+<TR>
+<TD> Designer:
+<TD> Tim Edwards
+</TR>
+<TR>
+<TD> Company:
+<TD> Efabless Corporation
+</TR>
+<TR>
+<TD> Created:
+<TD> November 21, 2023
+</TR>
+<TR>
+<TD> Last modified:
+<TD> March 13, 2024 at 01:31pm
+</TR>
+<TR>
+<TD> License:
+<TD> Apache 2.0
+</TR>
+</TBODY>
+</TABLE>
+<H2> Project dependencies </H2>
+
+<UL>
+   <LI> <A HREF=https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold> sky130_ef_ip__samplehold</A>
+</UL>
+
+<H2> Pin names and descriptions </H2>
+
+<BLOCKQUOTE>
+   <CENTER>
+      <IMG SRC=sky130_ef_ip__rdac3v_8bit_sym.svg WIDTH=30%>
+      <BR>
+      <I>Project schematic symbol</I>
+      <BR>
+   </CENTER>
+</BLOCKQUOTE>
+
+<TABLE border="1" frame="box" rules="all" width="80%" cellspacing="0"
+	cellpadding="2" bgcolor="#eeeeff">
+<TBODY>
+<TR>
+<TD> <I>pin name</I><TD> <I>description</I><TD> <I>type</I><TD> <I>direction</I><TD> <I>Vmin</I><TD> <I>Vmax</I><TD> <I>notes</I></TR>
+<TR>
+<TD>
+</TR>
+<TR>
+<TD> <B>b7:0</B>
+<TD> Digital input (8 bits)
+<TD> digital
+<TD> input
+<TD> vss - 0.3
+<TD> dvdd + 0.3
+<TD> 
+</TR>
+<TR>
+<TD> <B>ena</B>
+<TD> Enable input (active low)
+<TD> digital
+<TD> input
+<TD> vss - 0.3
+<TD> dvdd + 0.3
+<TD> 
+</TR>
+<TR>
+<TD> <B>Vhigh</B>
+<TD> Reference high voltage
+<TD> signal
+<TD> input
+<TD> Vlow
+<TD> vdd
+<TD> 
+</TR>
+<TR>
+<TD> <B>Vlow</B>
+<TD> Reference low voltage
+<TD> signal
+<TD> input
+<TD> vss
+<TD> Vhigh
+<TD> 
+</TR>
+<TR>
+<TD> <B>out</B>
+<TD> DAC voltage output
+<TD> signal
+<TD> output
+<TD> Vlow
+<TD> Vhigh
+<TD> 
+</TR>
+<TR>
+<TD> <B>dvdd</B>
+<TD> Positive digital power supply
+<TD> power
+<TD> inout
+<TD> 1.5
+<TD> 2.1
+<TD> 
+</TR>
+<TR>
+<TD> <B>dvss</B>
+<TD> Digital ground
+<TD> ground
+<TD> inout
+<TD> -0.3
+<TD> 0.3
+<TD> 
+</TR>
+<TR>
+<TD> <B>vdd</B>
+<TD> Positive analog power supply
+<TD> power
+<TD> inout
+<TD> 3.0
+<TD> 3.6
+<TD> 
+</TR>
+<TR>
+<TD> <B>vss</B>
+<TD> Analog ground
+<TD> ground
+<TD> inout
+<TD> -0.3
+<TD> 0.3
+<TD> 
+</TR>
+</TBODY>
+</TABLE>
+<H2> Default conditions </H2>
+<TABLE border="1" frame="box" rules="all" width="80%" cellspacing="0"
+	cellpadding="2" bgcolor="#ddeeff">
+<TBODY>
+<TR>
+<TD> <I>name</I><TD> <I>description</I><TD> <I>unit</I><TD> <I>minimum</I><TD> <I>typical</I><TD> <I>maximum</I><TD> <I>notes</I></TR>
+<TR>
+<TD>
+</TR>
+<TR>
+<TD> <B>dvdd</B>
+<TD> Digital power supply voltage
+<TD> V
+<TD> 
+<TD> 1.8
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>dvss</B>
+<TD> Digital ground
+<TD> V
+<TD> 
+<TD> 0
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>vdd</B>
+<TD> Analog power supply voltage
+<TD> V
+<TD> 
+<TD> 3.3
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>vss</B>
+<TD> Analog ground
+<TD> V
+<TD> 
+<TD> 0
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>RLoad</B>
+<TD> Output load resistance
+<TD> MΩ
+<TD> 
+<TD> 100
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>CLoad</B>
+<TD> Output load capatitance
+<TD> fF
+<TD> 
+<TD> 
+<TD> 100
+<TD> 
+</TR>
+<TR>
+<TD> <B>Vlow</B>
+<TD> DAC low voltage reference
+<TD> V
+<TD> 
+<TD> 0
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>Vhigh</B>
+<TD> DAC high voltage reference
+<TD> V
+<TD> 
+<TD> 3.3
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>ena</B>
+<TD> DAC enable
+<TD> 
+<TD> 
+<TD> 1
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>b[7:0]</B>
+<TD> DAC digital input value
+<TD> 
+<TD> 
+<TD> 00000000
+<TD> 
+<TD> 
+</TR>
+<TR>
+<TD> <B>Temp</B>
+<TD> Ambient temperature
+<TD> °C
+<TD> -40
+<TD> 27
+<TD> 130
+<TD> 
+</TR>
+<TR>
+<TD> <B>Corner</B>
+<TD> Process corner
+<TD> 
+<TD> ss
+<TD> tt
+<TD> ff
+<TD> 
+</TR>
+</TBODY>
+</TABLE>
+<H2> Electrical parameters </H2>
+<TABLE border="1" frame="box" rules="all" width="80%" cellspacing="0"
+	cellpadding="2" bgcolor="#ddffff">
+<TBODY>
+<TR>
+<TD> <I>name</I><TD> <I>description</I><TD> <I>unit</I><TD> <I>minimum</I><TD> <I>typical</I><TD> <I>maximum</I><TD> <I>notes</I></TR>
+<TR>
+<TD>
+</TR>
+<TR>
+<TD> <B>Idd</B>
+<TD> Current draw through analog supply, DAC enabled
+<TD> µA
+<TD> 4.221
+<TD> 111
+<TD> 111
+<TD> 
+</TR>
+<TR>
+<TD> <B>Standby current</B>
+<TD> Current draw through analog supply, DAC disabled
+<TD> µA
+<TD> 0.007188
+<TD> 0.02316
+<TD> 0.03912
+<TD> 
+</TR>
+<TR>
+<TD> <B>INL</B>
+<TD> integral nonlinearity (INL)
+<TD> lsb
+<TD> 0.9976
+<TD> 3.995
+<TD> <FONT COLOR=red>3.995</FONT>
+<TD> 
+</TR>
+<TR>
+<TD> <B>INL (Monte Carlo)</B>
+<TD> Integral nonlinearity (INL), Monte Carlo
+<TD> lsb
+<TD> 0.6023
+<TD> 2.321
+<TD> <FONT COLOR=red>4.963</FONT>
+<TD> 
+</TR>
+<TR>
+<TD> <B>DNL</B>
+<TD> Differential nonlinearity (DNL)
+<TD> lsb
+<TD> -0.9989
+<TD> -0.1237
+<TD> 0.06632
+<TD> 
+</TR>
+<TR>
+<TD> <B>Offset Error</B>
+<TD> Output offset error
+<TD> %FSR
+<TD> 4.208
+<TD> 14.13
+<TD> <FONT COLOR=red>110.6</FONT>
+<TD> 
+</TR>
+<TR>
+<TD> <B>Gain Error</B>
+<TD> Output gain error
+<TD> %FSR
+<TD> 1.21
+<TD> 2.213
+<TD> <FONT COLOR=red>12.14</FONT>
+<TD> 
+</TR>
+</TBODY>
+</TABLE>
+<BR><I>Note:</I> Values taken from Schematic captured<BR>
+<H2> Physical parameters </H2>
+<TABLE border="1" frame="box" rules="all" width="80%" cellspacing="0"
+	cellpadding="2" bgcolor="#eeffff">
+<TBODY>
+<TR>
+<TD> <I>name</I><TD> <I>description</I><TD> <I>unit</I><TD> <I>minimum</I><TD> <I>typical</I><TD> <I>maximum</I><TD> <I>notes</I></TR>
+<TR>
+<TD>
+</TR>
+<TR>
+<TD> <B>area</B>
+<TD> Total circuit layout area
+<TD> µm²
+<TD> 
+<TD> 
+<TD> 2.457e+04
+<TD> 
+</TR>
+<TR>
+<TD> <B>LVS errors</B>
+<TD> LVS errors
+<TD> 
+<TD> 
+<TD> 
+<TD> 0
+<TD> 
+</TR>
+<TR>
+<TD> <B>DRC errors</B>
+<TD> DRC errors
+<TD> 
+<TD> 
+<TD> 
+<TD> 0
+<TD> 
+</TR>
+</TBODY>
+</TABLE>
+<BR><I>Note:</I> Values taken from Specification<BR>
+</BODY>
+</HTML>
+
+<BLOCKQUOTE>
+   <CENTER>
+      <IMG SRC=../plots/schematic/transient_sine.png>
+      <BR>
+      <I>Digital sine wave transient response</I>
+      <BR>
+      (Values taken from schematic extraction)
+   </CENTER>
+</BLOCKQUOTE>
+

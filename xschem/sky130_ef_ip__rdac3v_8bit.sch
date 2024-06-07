@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -416,10 +417,20 @@ N -50 -2120 -50 -2000 {
 lab=vdd}
 N -50 -2000 -0 -2000 {
 lab=vdd}
-N -50 -3030 0 -3030 {}
-N -50 -3130 -0 -3130 {}
-N -70 -3070 -0 -3070 {}
-N -70 -3240 -70 -1940 {}
+N -50 -3030 0 -3030 {
+lab=vdd}
+N -50 -3130 -0 -3130 {
+lab=vdd}
+N -70 -3070 -0 -3070 {
+lab=vss}
+N -70 -3240 -70 -1940 {
+lab=vss}
+N 970 -2670 1010 -2670 {
+lab=xxx}
+N 970 -2670 970 -2600 {
+lab=xxx}
+N 970 -2600 1020 -2600 {
+lab=xxx}
 C {dac_half.sym} 150 -2730 0 0 {name=x1}
 C {dac_half.sym} 150 -2340 0 0 {name=x2}
 C {passtrans.sym} 690 -2690 0 0 {name=x3}
@@ -487,3 +498,4 @@ C {dac_column_dummy.sym} 150 -2090 0 0 {name=x18}
 C {dac_column_dummy.sym} 150 -1970 0 0 {name=x5}
 C {dac_column_dummy.sym} 150 -3000 0 0 {name=x4}
 C {dac_column_dummy.sym} 150 -3100 0 0 {name=x16}
+C {devices/lab_pin.sym} 1020 -2600 0 1 {name=p18 sig_type=std_logic lab=dvss}
