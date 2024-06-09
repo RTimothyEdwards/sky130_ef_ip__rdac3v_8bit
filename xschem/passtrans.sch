@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -67,4 +68,4 @@ C {devices/ipin.sym} 370 -1550 0 0 {name=p2 lab=ena}
 C {devices/ipin.sym} 370 -1490 0 0 {name=p3 lab=vss}
 C {devices/ipin.sym} 370 -1720 0 0 {name=p4 lab=vdd}
 C {devices/ipin.sym} 370 -1610 0 0 {name=p5 lab=in}
-C {devices/opin.sym} 660 -1610 0 0 {name=p6 lab=out}
+C {devices/iopin.sym} 660 -1610 0 0 {name=p6 lab=out}

@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -951,14 +952,15 @@ lab=vdd}
 N 2220 -3570 2220 -3550 {
 lab=vdd}
 N 2230 -3530 2250 -3530 {
-lab=nc}
+lab=#net61}
 N 2230 -3530 2230 -3450 {
-lab=nc}
+lab=#net61}
 N 2230 -3450 2580 -3450 {
-lab=nc}
+lab=#net61}
 N 2580 -3570 2580 -3450 {
-lab=nc}
-N 2550 -3570 2580 -3570 {}
+lab=#net61}
+N 2550 -3570 2580 -3570 {
+lab=#net61}
 C {dac_column.sym} 450 -2300 0 0 {name=x1}
 C {dac_column.sym} 450 -2520 0 0 {name=x2}
 C {dac_column.sym} 450 -2740 0 0 {name=x3}
@@ -991,7 +993,7 @@ C {passtrans.sym} 1800 -1850 0 0 {name=x27}
 C {passtrans.sym} 1800 -980 0 0 {name=x28}
 C {passtrans.sym} 2280 -3220 0 0 {name=x29}
 C {passtrans.sym} 2290 -1450 0 0 {name=x30}
-C {devices/opin.sym} 2570 -2390 0 0 {name=p1 lab=out}
+C {devices/iopin.sym} 2570 -2390 0 0 {name=p1 lab=out}
 C {devices/ipin.sym} 230 -4100 0 0 {name=p4 lab=vdd}
 C {devices/ipin.sym} 230 -4080 0 0 {name=p5 lab=vss}
 C {devices/ipin.sym} 220 -4060 0 0 {name=p6 lab=b3}

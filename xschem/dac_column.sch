@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -349,7 +350,7 @@ lab=vss}
 N 60 -2770 250 -2770 {
 lab=b0b}
 N 630 -2700 680 -2700 {
-lab=#net12}
+lab=#net15}
 N 630 -1370 680 -1370 {
 lab=#net12}
 N 300 -1390 300 -1290 {
@@ -389,7 +390,7 @@ lab=dum_in}
 N 130 -2620 280 -2620 {
 lab=dum_in}
 N 220 -2660 330 -2660 {
-lab=#net12}
+lab=#net15}
 N 240 -1330 240 -1250 {
 lab=#net12}
 N 240 -1250 680 -1250 {
@@ -397,17 +398,17 @@ lab=#net12}
 N 680 -1370 680 -1250 {
 lab=#net12}
 N 220 -2750 680 -2750 {
-lab=#net12}
+lab=#net15}
 N 220 -2750 220 -2660 {
-lab=#net12}
+lab=#net15}
 N 310 -1480 330 -1480 {
 lab=vdd}
 N 300 -1440 330 -1440 {
 lab=vss}
 N 630 -2590 680 -2590 {
-lab=#net12}
+lab=#net15}
 N 680 -2750 680 -2590 {
-lab=#net12}
+lab=#net15}
 N 680 -1500 680 -1370 {
 lab=#net12}
 C {passtrans.sym} 480 -1630 0 0 {name=x1}
@@ -495,7 +496,7 @@ C {passtrans.sym} 930 -1950 0 0 {name=x13}
 C {passtrans.sym} 930 -1740 0 0 {name=x14}
 C {passtrans.sym} 1400 -2300 0 0 {name=x15}
 C {passtrans.sym} 1400 -1890 0 0 {name=x16}
-C {devices/opin.sym} 1720 -2340 0 0 {name=p5 lab=out}
+C {devices/iopin.sym} 1720 -2340 0 0 {name=p5 lab=out}
 C {devices/ipin.sym} 60 -2790 0 0 {name=p6 lab=b0}
 C {devices/ipin.sym} 60 -2770 0 0 {name=p7 lab=b0b}
 C {devices/ipin.sym} 60 -2810 0 0 {name=p8 lab=b1}
