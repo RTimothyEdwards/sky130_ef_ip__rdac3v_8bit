@@ -65,7 +65,7 @@ spiceprefix=X
 }
 C {devices/ipin.sym} 370 -1660 0 0 {name=p1 lab=enab}
 C {devices/ipin.sym} 370 -1550 0 0 {name=p2 lab=ena}
-C {devices/ipin.sym} 370 -1490 0 0 {name=p3 lab=vss}
-C {devices/ipin.sym} 370 -1720 0 0 {name=p4 lab=vdd}
-C {devices/ipin.sym} 370 -1610 0 0 {name=p5 lab=in}
+C {devices/iopin.sym} 370 -1490 0 1 {name=p3 lab=vss}
+C {devices/iopin.sym} 370 -1720 0 1 {name=p4 lab=vdd}
+C {devices/iopin.sym} 370 -1610 0 1 {name=p5 lab=in}
 C {devices/iopin.sym} 660 -1610 0 0 {name=p6 lab=out}

@@ -463,12 +463,6 @@ L=3
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {sky130_fd_pr/res_high_po_0p35.sym} 130 -2400 0 0 {name=R8
-W=0.35
-L=3
-model=res_high_po_0p35
-spiceprefix=X
-mult=1}
 C {sky130_fd_pr/res_high_po_0p35.sym} 130 -2400 0 0 {name=R9
 W=0.35
 L=3
@@ -487,9 +481,9 @@ L=3
 model=res_high_po_0p35
 spiceprefix=X
 mult=1}
-C {devices/ipin.sym} 60 -2470 0 0 {name=p1 lab=res_in}
-C {devices/ipin.sym} 40 -1470 0 0 {name=p3 lab=vss}
-C {devices/ipin.sym} 60 -2730 0 0 {name=p4 lab=vdd}
+C {devices/iopin.sym} 60 -2470 0 1 {name=p1 lab=res_in}
+C {devices/iopin.sym} 40 -1470 0 1 {name=p3 lab=vss}
+C {devices/iopin.sym} 60 -2730 0 1 {name=p4 lab=vdd}
 C {passtrans.sym} 940 -2380 0 0 {name=x11}
 C {passtrans.sym} 930 -2160 0 0 {name=x12}
 C {passtrans.sym} 930 -1950 0 0 {name=x13}
@@ -503,8 +497,8 @@ C {devices/ipin.sym} 60 -2810 0 0 {name=p8 lab=b1}
 C {devices/ipin.sym} 60 -2830 0 0 {name=p9 lab=b1b}
 C {devices/ipin.sym} 60 -2850 0 0 {name=p10 lab=b2}
 C {devices/ipin.sym} 60 -2870 0 0 {name=p11 lab=b2b}
-C {devices/ipin.sym} 60 -2680 0 0 {name=p12 lab=dum_in}
-C {devices/opin.sym} 80 -1550 2 0 {name=p2 lab=res_out}
-C {devices/opin.sym} 40 -1360 2 0 {name=p13 lab=dum_out}
+C {devices/iopin.sym} 60 -2680 0 1 {name=p12 lab=dum_in}
+C {devices/iopin.sym} 80 -1550 2 0 {name=p2 lab=res_out}
+C {devices/iopin.sym} 40 -1360 2 0 {name=p13 lab=dum_out}
 C {passtrans.sym} 480 -2660 0 0 {name=x17}
 C {passtrans.sym} 480 -1330 0 0 {name=x18}

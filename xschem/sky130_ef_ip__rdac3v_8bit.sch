@@ -435,8 +435,8 @@ C {dac_half.sym} 150 -2730 0 0 {name=x1}
 C {dac_half.sym} 150 -2340 0 0 {name=x2}
 C {passtrans.sym} 690 -2690 0 0 {name=x3}
 C {devices/opin.sym} 1370 -2750 0 0 {name=p3 lab=out}
-C {devices/ipin.sym} -340 -3240 0 0 {name=p4 lab=vss}
-C {devices/ipin.sym} -340 -3210 0 0 {name=p5 lab=vdd}
+C {devices/iopin.sym} -340 -3240 0 1 {name=p4 lab=vss}
+C {devices/iopin.sym} -340 -3210 0 1 {name=p5 lab=vdd}
 C {devices/iopin.sym} 410 -2990 0 0 {name=p6 lab=Vhigh}
 C {devices/iopin.sym} 420 -2210 0 0 {name=p7 lab=Vlow}
 C {devices/lab_pin.sym} -390 -2950 0 0 {name=l7 sig_type=std_logic lab=b7a}
@@ -489,8 +489,8 @@ C {devices/ipin.sym} -1040 -2610 0 0 {name=p12 lab=b5}
 C {devices/ipin.sym} -1040 -2510 0 0 {name=p13 lab=b6}
 C {devices/ipin.sym} -1040 -2410 0 0 {name=p14 lab=b7}
 C {devices/lab_pin.sym} -1050 -3150 0 0 {name=l39 sig_type=std_logic lab=vdd}
-C {devices/ipin.sym} -1030 -3250 0 0 {name=p15 lab=dvdd}
-C {devices/ipin.sym} -1030 -3220 0 0 {name=p16 lab=dvss}
+C {devices/iopin.sym} -1030 -3250 0 1 {name=p15 lab=dvdd}
+C {devices/iopin.sym} -1030 -3220 0 1 {name=p16 lab=dvss}
 C {../../sky130_ef_ip__samplehold/xschem/follower_amp.sym} 1160 -2720 0 0 {name=x6}
 C {devices/lab_pin.sym} 940 -2730 0 0 {name=l2 sig_type=std_logic lab=out_unbuf}
 C {passtrans.sym} 690 -2470 0 0 {name=x15}

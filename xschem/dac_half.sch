@@ -969,7 +969,7 @@ C {dac_column.sym} 450 -3180 0 0 {name=x5}
 C {dac_column.sym} 450 -3400 0 0 {name=x6}
 C {dac_column.sym} 450 -3620 0 0 {name=x7}
 C {dac_column.sym} 450 -3840 0 0 {name=x8}
-C {devices/ipin.sym} 560 -4010 0 0 {name=p2 lab=res_in}
+C {devices/iopin.sym} 560 -4010 0 1 {name=p2 lab=res_in}
 C {dac_column.sym} 450 -530 0 0 {name=x9}
 C {dac_column.sym} 450 -750 0 0 {name=x10}
 C {dac_column.sym} 450 -970 0 0 {name=x11}
@@ -978,7 +978,7 @@ C {dac_column.sym} 450 -1410 0 0 {name=x13}
 C {dac_column.sym} 450 -1630 0 0 {name=x14}
 C {dac_column.sym} 450 -1850 0 0 {name=x15}
 C {dac_column.sym} 450 -2070 0 0 {name=x16}
-C {devices/opin.sym} 740 -470 0 0 {name=p3 lab=res_out}
+C {devices/iopin.sym} 740 -470 0 0 {name=p3 lab=res_out}
 C {passtrans.sym} 1360 -710 0 0 {name=x17}
 C {passtrans.sym} 1360 -1150 0 0 {name=x18}
 C {passtrans.sym} 1350 -1590 0 0 {name=x19}
@@ -994,8 +994,8 @@ C {passtrans.sym} 1800 -980 0 0 {name=x28}
 C {passtrans.sym} 2280 -3220 0 0 {name=x29}
 C {passtrans.sym} 2290 -1450 0 0 {name=x30}
 C {devices/iopin.sym} 2570 -2390 0 0 {name=p1 lab=out}
-C {devices/ipin.sym} 230 -4100 0 0 {name=p4 lab=vdd}
-C {devices/ipin.sym} 230 -4080 0 0 {name=p5 lab=vss}
+C {devices/iopin.sym} 230 -4100 0 1 {name=p4 lab=vdd}
+C {devices/iopin.sym} 230 -4080 0 1 {name=p5 lab=vss}
 C {devices/ipin.sym} 220 -4060 0 0 {name=p6 lab=b3}
 C {devices/ipin.sym} 220 -4040 0 0 {name=p7 lab=b3b}
 C {devices/ipin.sym} 1410 -4010 0 0 {name=p8 lab=b5}
@@ -1003,8 +1003,8 @@ C {devices/ipin.sym} 1410 -3990 0 0 {name=p9 lab=b5b}
 C {devices/ipin.sym} 1930 -4010 0 0 {name=p10 lab=b6}
 C {devices/ipin.sym} 1930 -3990 0 0 {name=p11 lab=b6b}
 C {passtrans.sym} 980 -3930 0 0 {name=x33}
-C {devices/opin.sym} 740 -450 0 0 {name=p12 lab=dum_out}
-C {devices/ipin.sym} 560 -3990 0 0 {name=p13 lab=dum_in}
+C {devices/iopin.sym} 740 -450 0 0 {name=p12 lab=dum_out}
+C {devices/iopin.sym} 560 -3990 0 1 {name=p13 lab=dum_in}
 C {passtrans.sym} 980 -3710 0 0 {name=x31}
 C {passtrans.sym} 980 -3490 0 0 {name=x32}
 C {passtrans.sym} 980 -3270 0 0 {name=x34}
