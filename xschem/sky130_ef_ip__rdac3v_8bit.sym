@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {type=subcircuit
 format="@name @pinlist @symname"
@@ -32,7 +33,7 @@ B 5 -152.5 127.5 -147.5 132.5 {name=vss dir=in }
 B 5 -152.5 107.5 -147.5 112.5 {name=dvss dir=in }
 B 5 -152.5 -132.5 -147.5 -127.5 {name=vdd dir=in }
 B 5 -152.5 -72.5 -147.5 -67.5 {name=b0 dir=in }
-B 5 147.5 -132.5 152.5 -127.5 {name=Vhigh dir=in }
+B 5 147.5 -132.5 152.5 -127.5 {name=Vhigh dir=inout }
 B 5 -152.5 -52.5 -147.5 -47.5 {name=b1 dir=in }
 B 5 -152.5 -32.5 -147.5 -27.5 {name=b2 dir=in }
 B 5 -152.5 -12.5 -147.5 -7.5 {name=b3 dir=in }
@@ -42,7 +43,7 @@ B 5 -152.5 27.5 -147.5 32.5 {name=b5 dir=in }
 B 5 -152.5 -92.5 -147.5 -87.5 {name=ena dir=in }
 B 5 -152.5 47.5 -147.5 52.5 {name=b6 dir=in }
 B 5 -152.5 67.5 -147.5 72.5 {name=b7 dir=in }
-B 5 147.5 127.5 152.5 132.5 {name=Vlow dir=out }
+B 5 147.5 127.5 152.5 132.5 {name=Vlow dir=inout }
 T {@symname} -67.5 -6 0 0 0.3 0.3 {}
 T {@name} 135 -152 0 0 0.2 0.2 {}
 T {dvdd} -125 -114 0 0 0.2 0.2 {}
