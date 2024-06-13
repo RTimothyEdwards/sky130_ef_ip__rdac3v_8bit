@@ -286,10 +286,6 @@ Circuit 1 contains 791 nets,    Circuit 2 contains 791 nets.
 
 Final result: 
 Circuits match uniquely.
-Property errors were found.
-
-The following cells had property errors:
- sky130_ef_ip__rdac3v_8bit_flat
-
+.
 Logging to file "../reports/sky130_ef_ip__rdac3v_8bit_comp.out" disabled
 LVS Done.

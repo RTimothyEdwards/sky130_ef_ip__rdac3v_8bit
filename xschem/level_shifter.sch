@@ -1,4 +1,5 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.5 file_version=1.2
+}
 G {}
 K {}
 V {}
@@ -40,7 +41,8 @@ C {devices/opin.sym} 390 -2750 0 0 {name=p2 lab=bit_out}
 C {devices/opin.sym} 390 -2830 0 0 {name=p3 lab=bitb_out}
 C {sky130_fd_pr/diode.sym} -190 -2670 0 0 {name=XD1
 model=diode_pw2nd_05v5
-area=1
+area=2.025e11
+perim=1.8e6
 }
 C {devices/ipin.sym} -230 -2580 0 0 {name=p4 lab=dvss}
 C {devices/ipin.sym} -210 -2840 0 0 {name=p5 lab=dvdd}
