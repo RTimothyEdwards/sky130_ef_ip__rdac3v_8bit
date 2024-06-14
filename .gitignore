@@ -10,3 +10,5 @@ mag/*.res.ext
 mag/*.nodes
 mag/*.sim
 .spiceinit
+dependencies/sky130*
+dependencies/README*
