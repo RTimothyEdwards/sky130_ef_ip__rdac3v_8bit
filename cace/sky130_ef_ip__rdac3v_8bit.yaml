@@ -24,7 +24,7 @@ paths:
 
 dependencies:
   sky130_ef_ip__samplehold:
-    path: ..
+    path: ../dependencies/
     repository: https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold
     commit: N/A
 
