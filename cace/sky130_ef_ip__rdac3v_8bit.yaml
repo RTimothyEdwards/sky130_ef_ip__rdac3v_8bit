@@ -293,7 +293,7 @@ electrical_parameters:
         description: Iterations to run
         display: Iterations
         minimum: '1'
-        maximum: '100'
+        maximum: '50'
         step: linear
         stepsize: '1'
       corner:
