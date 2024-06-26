@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1652995732
+timestamp 1719257891
 << locali >>
 rect 2743 1304 3058 1310
 rect 2743 1269 2764 1304
@@ -157,31 +157,31 @@ timestamp 1652928066
 transform 1 0 4664 0 1 721
 box -183 -183 183 183
 use sky130_fd_sc_hvl__fill_1  sky130_fd_sc_hvl__fill_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 4206 0 1 -2
 box -66 -43 162 897
 use sky130_fd_sc_hvl__fill_2  sky130_fd_sc_hvl__fill_2_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 4014 0 1 -2
 box -66 -43 258 897
 use sky130_fd_sc_hvl__inv_2  sky130_fd_sc_hvl__inv_2_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 2094 0 1 -2
 box -66 -43 546 897
 use sky130_fd_sc_hvl__inv_4  sky130_fd_sc_hvl__inv_4_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 2094 0 -1 1626
 box -66 -43 834 897
 use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 2862 0 -1 1626
 box -66 -43 1506 897
 use sky130_fd_sc_hvl__inv_8  sky130_fd_sc_hvl__inv_8_1
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 2574 0 1 -2
 box -66 -43 1506 897
 use sky130_fd_sc_hvl__lsbuflv2hv_1  sky130_fd_sc_hvl__lsbuflv2hv_1_0 $PDKPATH/libs.ref/sky130_fd_sc_hvl/mag
-timestamp 1650294714
+timestamp 1715205430
 transform 1 0 -18 0 1 -2
 box -66 -43 2178 1671
 << labels >>
