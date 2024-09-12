@@ -6,7 +6,7 @@ name: sky130_ef_ip__rdac3v_8bit
 description: 8-bit DAC with 3.3V supply and enable input
 commit: N/A
 PDK: sky130A
-cace_format: 5.0
+cace_format: 5.2
 
 authorship:
   designer: Tim Edwards
@@ -16,7 +16,7 @@ authorship:
  
 paths:
   root: ..
-  documentation: doc
+  documentation: docs
   schematic: xschem
   magic: mag
   layout: gds
@@ -24,9 +24,8 @@ paths:
 
 dependencies:
   sky130_ef_ip__samplehold:
-    path: ../dependencies/
+    path: ../
     repository: https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold
-    commit: N/A
 
 pins:
   b7:0:
@@ -147,7 +146,7 @@ default_conditions:
     typical: tt
     maximum: ff
 
-electrical_parameters:
+parameters:
   Idd_enabled:
     description: Current draw through analog supply, DAC enabled
     display: Idd
@@ -160,7 +159,7 @@ electrical_parameters:
       maximum:
         value: '250'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: dccurrent_vdd.spice
         format: ascii
@@ -193,7 +192,7 @@ electrical_parameters:
       maximum:
         value: '250'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: dccurrent_vdd.spice
         format: ascii
@@ -228,7 +227,7 @@ electrical_parameters:
       maximum:
         value: '2'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: voltage_output.spice
         format: ascii
@@ -267,7 +266,7 @@ electrical_parameters:
         value: '2'
         fail: true
         measurement: std3p-below
-    simulate:
+    tool:
       ngspice:
         template: voltage_output.spice
         collate: iterations
@@ -311,7 +310,7 @@ electrical_parameters:
       maximum:
         value: '2'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: voltage_output.spice
         collate: b[7:0]
@@ -360,7 +359,7 @@ electrical_parameters:
       maximum:
         value: '0.01'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: voltage_output.spice
         format: ascii
@@ -400,7 +399,7 @@ electrical_parameters:
       maximum:
         value: '0.02'
         fail: true
-    simulate:
+    tool:
       ngspice:
         template: voltage_output.spice
         collate: b[7:0]
@@ -434,7 +433,7 @@ electrical_parameters:
     description: Digital sine wave transient response
     display: out
     unit: V
-    simulate:
+    tool:
       ngspice:
         template: transient_sine.spice
         format: ascii
@@ -469,31 +468,57 @@ electrical_parameters:
       corner:
         typical: tt
 
-physical_parameters:
-  area:
-    description: Total circuit layout area
-    display: area
-    unit: µm²
+  magic_area:
     spec:
-      maximum:
-        value: '50000'
-        fail: true
-    evaluate: cace_area
-  LVS_errors:
-    description: LVS errors
-    display: LVS errors
+      area:
+        display: Area
+        description: Total circuit layout area
+        unit: µm²
+        maximum:
+          value: 50000
+      width:
+        display: Width
+        description: Total circuit layout width
+        unit: µm
+        maximum:
+          value: any
+      height:
+        display: Height
+        description: Total circuit layout height
+        unit: µm
+        maximum:
+          value: any
+    tool:
+      magic_area
+
+  magic_drc:
+    description: Magic DRC
+    display: Magic DRC
     spec:
-      maximum:
-        value: '0'
-        fail: true
-    evaluate:
-      cace_lvs:
-        script: run_project_lvs.tcl
-  DRC_errors:
-    description: DRC errors
-    display: DRC errors
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+      magic_drc
+
+  netgen_lvs:
+    description: Netgen LVS
+    display: Netgen LVS
     spec:
-      maximum:
-        value: '0'
-        fail: true
-    evaluate: cace_drc
+      lvs_errors:
+        maximum:
+          value: 0
+    tool:
+      netgen_lvs:
+        script: run_lvs.tcl
+
+  klayout_drc_full:
+    description: KLayout DRC full
+    display: KLayout DRC full
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true', '-rd', 'beol=true', '-rd', 'offgrid=true']
