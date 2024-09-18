@@ -1,9 +1,5 @@
-cace/templates/xschemrc
-cace/templates/*.sym
-cace/templates/*.spice
 runs/*
 netlist/*
-xschem/xschemrc
 xschem/*.spice
 mag/*.ext
 mag/*.res.ext

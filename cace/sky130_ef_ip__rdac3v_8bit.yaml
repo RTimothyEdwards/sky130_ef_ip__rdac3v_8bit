@@ -22,11 +22,6 @@ paths:
   layout: gds
   netlist: netlist
 
-dependencies:
-  sky130_ef_ip__samplehold:
-    path: ../
-    repository: https://github.com/RTimothyEdwards/sky130_ef_ip__samplehold
-
 pins:
   b7:0:
     description: Digital input (8 bits)
