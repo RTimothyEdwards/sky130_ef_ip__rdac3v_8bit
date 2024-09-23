@@ -17,7 +17,7 @@ set circuit2 [readnet spice $hvlib]
 readnet spice $hdlib $circuit2
 readnet spice ../netlist/schematic/sky130_ef_ip__rdac3v_8bit.spice $circuit2
 
-debug on
+# debug on
 
 lvs "$circuit1 sky130_ef_ip__rdac3v_8bit" "$circuit2 sky130_ef_ip__rdac3v_8bit" \
         $setupfile sky130_ef_ip__rdac3v_8bit_comp.out

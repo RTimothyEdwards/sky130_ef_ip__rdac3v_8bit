@@ -1509,9 +1509,36 @@ rect 25534 75 25543 447
 rect 25865 75 25875 447
 rect 25534 66 25875 75
 use dac_3v_column  dac_3v_column_0
-array 0 7 2132 0 0 15271
 timestamp 1653060931
 transform 1 0 7331 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_1
+timestamp 1653060931
+transform 1 0 9463 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_2
+timestamp 1653060931
+transform 1 0 11595 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_3
+timestamp 1653060931
+transform 1 0 13727 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_4
+timestamp 1653060931
+transform 1 0 15859 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_5
+timestamp 1653060931
+transform 1 0 17991 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_6
+timestamp 1653060931
+transform 1 0 20123 0 1 322
+box -20 -7 1049 15264
+use dac_3v_column  dac_3v_column_7
+timestamp 1653060931
+transform 1 0 22255 0 1 322
 box -20 -7 1049 15264
 use dac_3v_column_dummy  dac_3v_column_dummy_0
 timestamp 1653061945
@@ -1522,11 +1549,38 @@ timestamp 1653061945
 transform 1 0 24386 0 1 322
 box -18 -7 1049 15272
 use dac_3v_column_odd  dac_3v_column_odd_0
-array 0 7 2132 0 0 15270
 timestamp 1653060931
 transform 1 0 8398 0 1 322
 box -20 -7 1049 15263
-use follower_amp  follower_amp_0 ../../sky130_ef_ip__samplehold/mag
+use dac_3v_column_odd  dac_3v_column_odd_1
+timestamp 1653060931
+transform 1 0 10530 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_2
+timestamp 1653060931
+transform 1 0 12662 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_3
+timestamp 1653060931
+transform 1 0 14794 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_4
+timestamp 1653060931
+transform 1 0 16926 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_5
+timestamp 1653060931
+transform 1 0 19058 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_6
+timestamp 1653060931
+transform 1 0 21190 0 1 322
+box -20 -7 1049 15263
+use dac_3v_column_odd  dac_3v_column_odd_7
+timestamp 1653060931
+transform 1 0 23322 0 1 322
+box -20 -7 1049 15263
+use follower_amp  follower_amp_0 ../dependencies/sky130_ef_ip__samplehold/mag
 timestamp 1718228583
 transform 0 1 12491 1 0 16882
 box 0 0 4377 11129
