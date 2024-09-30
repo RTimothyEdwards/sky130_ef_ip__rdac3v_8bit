@@ -1,9 +1,7 @@
+from typing import Any
 
-def postprocess(results, conditions):
+def postprocess(results: dict[str, list], conditions: dict[str, Any]) -> dict[str, list]:
 
-    print(f'results: {results}')
-    print(f'conditions: {conditions}')
-    
     # DNL calculation:
     # x is the digital value b7:0 converted to an integer
     # V(x) is the original value in RESULT:  The voltage output of the DAC
@@ -14,15 +12,25 @@ def postprocess(results, conditions):
     
     Vhigh = float(conditions['Vhigh'])
     Vlow = float(conditions['Vlow'])
-    x = float(conditions['b'])
     
     alsb = (Vhigh - Vlow) / 256
     
     dnl = []
+    b_lower = []
+    b_prev = None
+    vout_prev = None
     
-    for vout in results['vout']:
-        dnl.append((vout - (x * alsb + Vlow)) / alsb)
+    for b, vout in zip(conditions['b'], results['vout']):
+        # Check for step
+        if b_prev != None and b - b_prev == 1:
+            # Calculate DNL
+            stepdiff = vout - vout_prev
+            dnl.append((stepdiff / alsb) - 1)
+    
+            # Store the lower b of the step
+            b_lower.append(b_prev)
+    
+        b_prev = b
+        vout_prev = vout
 
-    output = {'dnl': dnl}
-    
-    return output
+    return {'dnl': dnl, 'b_lower': b_lower}

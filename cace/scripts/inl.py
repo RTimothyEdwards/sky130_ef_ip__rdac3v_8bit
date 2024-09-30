@@ -1,8 +1,6 @@
+from typing import Any
 
-def postprocess(results, conditions):
-
-    print(f'results: {results}')
-    print(f'conditions: {conditions}')
+def postprocess(results: dict[str, list], conditions: dict[str, Any]) -> dict[str, list]:
     
     # INL calculation:
     # x is the digital value b7:0 converted to an integer
@@ -23,9 +21,8 @@ def postprocess(results, conditions):
     
     inl = []
     
+    # Iterate over MC results
     for vout in results['vout']:
         inl.append((vout - (x * alsb + Vlow)) / alsb)
-
-    output = {'inl': inl}
-    
-    return output
+ 
+    return {'inl': inl}

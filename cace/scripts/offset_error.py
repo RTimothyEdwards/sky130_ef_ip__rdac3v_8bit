@@ -1,9 +1,7 @@
+from typing import Any
 
-def postprocess(results, conditions):
+def postprocess(results: dict[str, list], conditions: dict[str, Any]) -> dict[str, list]:
 
-    print(f'results: {results}')
-    print(f'conditions: {conditions}')
-    
     # Offset error calculation:
     # x is the digital value b7:0 converted to an integer
     # V(x) is the original value in RESULT:  The voltage output of the DAC
@@ -24,13 +22,12 @@ def postprocess(results, conditions):
     
     offset_error = []
     
+    # Iterate over MC results
     for vout in results['vout']:
-        print(f'vout: {vout} videal: {videal}')
-        print(f'{fsr}')
-        print(f'{((vout - videal) / fsr)}')
-        print(f'{100 * ((vout - videal) / fsr)}')
-        offset_error.append(100 * ((vout - videal) / fsr))
+        
+        # Calculate the offset error
+        # Don't multiply with 100 since
+        # CACE expects SI units
+        offset_error.append((vout - videal) / fsr)
 
-    output = {'offset_error': offset_error}
-    
-    return output
+    return {'offset_error': offset_error}
