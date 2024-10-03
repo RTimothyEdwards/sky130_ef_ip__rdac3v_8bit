@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: recursive
       # Run CACE on the design
       - name: Setup Environment and Run CACE
         uses: efabless/cace-action@main
