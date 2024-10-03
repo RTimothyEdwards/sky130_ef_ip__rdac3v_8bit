@@ -4,7 +4,7 @@ This is a simple 8-bit DAC demonstrating the use
 of the CACE system. It requires [CACE](https://github.com/efabless/cace) to run the testbenches.
 
 - [Documentation](docs/sky130_ef_ip__rdac3v_8bit.md)
-- [Characterization](docs/sky130_ef_ip__rdac3v_8bit_rcx.md)
+- [Characterization](docs/sky130_ef_ip__rdac3v_8bit_schematic.md)
 
 # Repository Structure
 
