@@ -106,14 +106,14 @@ N -120 -370 100 -370 {
 lab=VSUB}
 N -630 280 210 280 {
 lab=VSUB}
-C {devices/vsource.sym} -630 250 0 0 {name=VVDAC7 value="DC [\{b[7]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 -230 0 0 {name=VVDAC1 value="DC [\{b[1]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 -150 0 0 {name=VVDAC2 value="DC [\{b[2]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 -70 0 0 {name=VVDAC3 value="DC [\{b[3]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 10 0 0 {name=VVDAC4 value="DC [\{b[4]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 90 0 0 {name=VVDAC5 value="DC [\{b[5]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 170 0 0 {name=VVDAC6 value="DC [\{b[6]\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -630 -310 0 0 {name=VVDAC0 value="DC [\{b[0]\} * \{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 250 0 0 {name=VVDAC7 value="DC CACE[CACE\{b[7]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 -230 0 0 {name=VVDAC1 value="DC CACE[CACE\{b[1]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 -150 0 0 {name=VVDAC2 value="DC CACE[CACE\{b[2]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 -70 0 0 {name=VVDAC3 value="DC CACE[CACE\{b[3]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 10 0 0 {name=VVDAC4 value="DC CACE[CACE\{b[4]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 90 0 0 {name=VVDAC5 value="DC CACE[CACE\{b[5]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 170 0 0 {name=VVDAC6 value="DC CACE[CACE\{b[6]\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -630 -310 0 0 {name=VVDAC0 value="DC CACE[CACE\{b[0]\} * CACE\{Vdvdd\}]" savecurrent=false}
 C {devices/lab_pin.sym} -740 280 0 0 {name=p1 sig_type=std_logic lab=VSUB}
 C {devices/lab_pin.sym} -480 -340 0 1 {name=p2 sig_type=std_logic lab=b0}
 C {devices/lab_pin.sym} -480 -260 0 1 {name=p3 sig_type=std_logic lab=b1}
@@ -123,10 +123,10 @@ C {devices/lab_pin.sym} -480 -20 0 1 {name=p6 sig_type=std_logic lab=b4}
 C {devices/lab_pin.sym} -480 60 0 1 {name=p7 sig_type=std_logic lab=b5}
 C {devices/lab_pin.sym} -480 140 0 1 {name=p8 sig_type=std_logic lab=b6}
 C {devices/lab_pin.sym} -480 220 0 1 {name=p9 sig_type=std_logic lab=b7}
-C {devices/vsource.sym} -330 250 0 0 {name=VVlow value="DC \{Vlow\}" savecurrent=false}
-C {devices/vsource.sym} -60 250 0 0 {name=VVhigh value="DC \{Vhigh\}" savecurrent=false}
-C {devices/vsource.sym} 210 250 0 0 {name=Vena value="DC [\{ena\} * \{Vdvdd\}]" savecurrent=false}
-C {devices/vsource.sym} -100 90 0 0 {name=Vvss value="DC \{Vvss\}" savecurrent=false}
+C {devices/vsource.sym} -330 250 0 0 {name=VVlow value="DC CACE\{Vlow\}" savecurrent=false}
+C {devices/vsource.sym} -60 250 0 0 {name=VVhigh value="DC CACE\{Vhigh\}" savecurrent=false}
+C {devices/vsource.sym} 210 250 0 0 {name=Vena value="DC CACE[CACE\{ena\} * CACE\{Vdvdd\}]" savecurrent=false}
+C {devices/vsource.sym} -100 90 0 0 {name=Vvss value="DC CACE\{Vvss\}" savecurrent=false}
 C {devices/lab_pin.sym} -230 220 0 1 {name=p10 sig_type=std_logic lab=Vlow}
 C {devices/lab_wire.sym} -120 -270 0 1 {name=p11 sig_type=std_logic lab=vdd}
 C {devices/lab_wire.sym} 380 -270 0 0 {name=p12 sig_type=std_logic lab=Vhigh}
@@ -145,40 +145,40 @@ C {devices/lab_wire.sym} -120 -10 0 1 {name=p24 sig_type=std_logic lab=vss}
 C {devices/lab_wire.sym} 570 -140 0 0 {name=p25 sig_type=std_logic lab=out}
 C {devices/lab_wire.sym} 380 -10 0 0 {name=p26 sig_type=std_logic lab=Vlow}
 C {devices/res.sym} 370 -110 0 0 {name=Rout
-value=\{Rout\}
+value=CACE\{Rout\}
 device=resistor}
 C {devices/capa.sym} 510 -110 0 0 {name=Cout
-value=\{Cout\}}
+value=CACE\{Cout\}}
 C {devices/lab_pin.sym} 550 -80 0 1 {name=p27 sig_type=std_logic lab=VSUB}
 C {devices/lab_pin.sym} 40 220 0 1 {name=p28 sig_type=std_logic lab=Vhigh}
 C {devices/lab_pin.sym} 310 220 0 1 {name=p29 sig_type=std_logic lab=ena}
 C {devices/lab_pin.sym} 0 60 0 1 {name=p30 sig_type=std_logic lab=vss}
-C {devices/vsource.sym} 90 90 0 0 {name=Vdvss value="DC \{Vdvss\}" savecurrent=false}
+C {devices/vsource.sym} 90 90 0 0 {name=Vdvss value="DC CACE\{Vdvss\}" savecurrent=false}
 C {devices/lab_pin.sym} 190 60 0 1 {name=p31 sig_type=std_logic lab=dvss}
 C {devices/lab_pin.sym} -130 120 0 0 {name=p32 sig_type=std_logic lab=VSUB}
-C {devices/vsource.sym} -90 -400 0 0 {name=Vvdd value="DC \{Vvdd\}" savecurrent=false}
+C {devices/vsource.sym} -90 -400 0 0 {name=Vvdd value="DC CACE\{Vvdd\}" savecurrent=false}
 C {devices/lab_pin.sym} 10 -430 0 1 {name=p33 sig_type=std_logic lab=vdd}
-C {devices/vsource.sym} 100 -400 0 0 {name=Vdvdd value="DC \{Vdvdd\}" savecurrent=false}
+C {devices/vsource.sym} 100 -400 0 0 {name=Vdvdd value="DC CACE\{Vdvdd\}" savecurrent=false}
 C {devices/lab_pin.sym} 200 -430 0 1 {name=p34 sig_type=std_logic lab=dvdd}
 C {devices/lab_pin.sym} -120 -370 0 0 {name=p35 sig_type=std_logic lab=VSUB}
 C {devices/code_shown.sym} -990 -300 0 0 {name=CONTROL only_toplevel=false value=".control
 op
 set wr_singlescale
-wrdata \{simpath\}/\{filename\}_\{N\}.data V(out)
+wrdata CACE\{simpath\}/CACE\{filename\}_CACE\{N\}.data V(out)
 quit
 .endc
 "}
-C {devices/code_shown.sym} -1000 -580 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file \{filename\}_\{N\}
+C {devices/code_shown.sym} -1000 -580 0 0 {name=SETUP only_toplevel=false value="* CACE gensim simulation file CACE\{filename\}_CACE\{N\}
 * Generated by CACE gensim, Efabless Corporation (c) 2023
 * Simple output voltage measurement for a DAC (DC operating point)
 
-.include \{DUT_path\}
-.include \{PDK_ROOT\}/\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+.include CACE\{DUT_path\}
+.include CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 
-.lib \{PDK_ROOT\}/\{PDK\}/libs.tech/combined/sky130.lib.spice \{corner\}
+.lib CACE\{PDK_ROOT\}/CACE\{PDK\}/libs.tech/combined/sky130.lib.spice CACE\{corner\}
 
-.option SEED=[\{seed=12345\} + \{iterations=0\}]
-.option TEMP=\{temperature\}
+.option SEED=CACE[CACE\{seed=12345\} + CACE\{iterations=0\}]
+.option TEMP=CACE\{temperature\}
 * Flag unsafe operating conditions (exceeds models' specified limits)
 .option warn=1
 "}

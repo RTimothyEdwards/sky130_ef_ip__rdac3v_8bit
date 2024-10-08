@@ -5,7 +5,7 @@ G {}
 K {type=delay
 verilog_ignore=true
 vhdl_ignore=true
-format="@name [ @@d ] @d_source_model"
+format="@name [ @@d[7..0] ] @d_source_model"
 template="name=A1 d_source_model= d_source"
 }
 V {}
@@ -16,6 +16,6 @@ L 4 10 -30 10 30 {}
 L 4 -90 -30 10 -30 {}
 L 4 -90 -30 -90 30 {}
 L 4 -90 30 10 30 {}
-B 5 27.5 -2.5 32.5 2.5 {name=d dir=out verilog_type=wire propag=1}
+B 5 27.5 -2.5 32.5 2.5 {name=d[7..0] dir=out verilog_type=wire propag=1}
 T {@name} -55 -20 0 0 0.12 0.12 {}
 T {@d_source_model} -70 0 0 0 0.12 0.12 {}

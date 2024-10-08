@@ -57,83 +57,83 @@ pins:
     description: Positive digital power supply
     type: power
     direction: inout
-    Vmin: '1.5'
-    Vmax: '2.1'
+    Vmin: 1.5
+    Vmax: 2.1
   dvss:
     description: Digital ground
     type: ground
     direction: inout
-    Vmin: '-0.3'
-    Vmax: '0.3'
+    Vmin: -0.3
+    Vmax: 0.3
   vdd:
     description: Positive analog power supply
     type: power
     direction: inout
-    Vmin: '3.0'
-    Vmax: '3.6'
+    Vmin: 3.0
+    Vmax: 3.6
   vss:
     description: Analog ground
     type: ground
     direction: inout
-    Vmin: '-0.3'
-    Vmax: '0.3'
+    Vmin: -0.3
+    Vmax: 0.3
 
 default_conditions:
   Vdvdd:
     description: Digital power supply voltage
     display: dvdd
     unit: V
-    typical: '1.8'
+    typical: 1.8
   Vdvss:
     description: Digital ground
     display: dvss
     unit: V
-    typical: '0'
+    typical: 0
   Vvdd:
     description: Analog power supply voltage
     display: vdd
     unit: V
-    typical: '3.3'
+    typical: 3.3
   Vvss:
     description: Analog ground
     display: vss
     unit: V
-    typical: '0'
+    typical: 0
   Rout:
     description: Output load resistance
     display: RLoad
     unit: MΩ
-    typical: '100'
+    typical: 100
   Cout:
-    description: Output load capatitance
+    description: Output load capacitance
     display: CLoad
     unit: fF
-    maximum: '100'
+    maximum: 100
   Vlow:
     description: DAC low voltage reference
     display: Vlow
     unit: V
-    typical: '0'
+    typical: 0
   Vhigh:
     description: DAC high voltage reference
     display: Vhigh
     unit: V
-    typical: '3.3'
+    typical: 3.3
   ena:
     description: DAC enable
     display: ena
-    typical: '1'
+    typical: 1
   b[7:0]:
     description: DAC digital input value
     display: b[7:0]
-    typical: '00000000'
+    typical: 0b00000000
   temperature:
     description: Ambient temperature
     display: Temp
     unit: °C
-    minimum: '-40'
-    typical: '27'
-    maximum: '130'
+    minimum: -40
+    typical: 27
+    maximum: 130
   corner:
     description: Process corner
     display: Corner
@@ -147,319 +147,338 @@ parameters:
     display: Idd
     unit: µA
     spec:
-      minimum:
-        value: any
-      typical:
-        value: '170'
-      maximum:
-        value: '250'
-        fail: true
+      idd:
+        minimum:
+          value: any
+        typical:
+          value: 170
+        maximum:
+          value: 250
     tool:
       ngspice:
-        template: dccurrent_vdd.spice
+        template: dccurrent_vdd.sch
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
+        variables: [null, idd]
+    plot:
+      idd_enabled:
+        xaxis: b[7:0]
+        yaxis: idd
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       b[7:0]:
-        maximum: '11111111'
-        typical: '10000000'
-        minimum: '00000000'
+        maximum: 0b11111111
+        typical: 0b10000000
+        minimum: 0b00000000
       temperature:
-        typical: '27'
+        typical: 27
       corner:
         typical: tt
+
   Idd_disabled:
     description: Current draw through analog supply, DAC disabled
     display: Standby current
     unit: µA
     spec:
-      minimum:
-        value: any
-      typical:
-        value: '170'
-      maximum:
-        value: '250'
-        fail: true
+      idd:
+        minimum:
+          value: any
+        typical:
+          value: 170
+        maximum:
+          value: 250
     tool:
       ngspice:
-        template: dccurrent_vdd.spice
+        template: dccurrent_vdd.sch
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
+        variables: [null, idd]
+    plot:
+      idd_disabled:
+        xaxis: b[7:0]
+        yaxis: idd
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       b[7:0]:
-        maximum: '11111111'
-        minimum: '00000000'
+        maximum: 0b11111111
+        minimum: 0b00000000
       ena:
-        typical: '0'
+        typical: 0
       temperature:
-        typical: '27'
+        typical: 27
       corner:
         typical: tt
+
   INL:
     description: integral nonlinearity (INL)
     display: INL
     unit: lsb
     spec:
-      minimum:
-        value: '-2'
-        fail: true
-      typical:
-        value: '0'
-      maximum:
-        value: '2'
-        fail: true
+      inl:
+        minimum:
+          value: -2
+          fail: true
+        typical:
+          value: 0
+        maximum:
+          value: 2
+          fail: true
     tool:
       ngspice:
-        template: voltage_output.spice
+        template: voltage_output.sch
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
-    measure:
-    - tool: octave-cli
-      filename: inl.m
+        variables: [null, vout]
+        script: inl.py
+        script_variables: [inl]
+    plot:
+      inl:
+        xaxis: b[7:0]
+        yaxis: inl
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       b[7:0]:
-        maximum: '11111111'
-        typical: '11111100'
-        minimum: '00000000'
+        maximum: 0b11111111
+        typical: 0b11111100
+        minimum: 0b00000000
       temperature:
-        typical: '27'
+        typical: 27
       corner:
         typical: tt
+
   INL_Monte_Carlo:
     description: Integral nonlinearity (INL), Monte Carlo
     display: INL (Monte Carlo)
     unit: lsb
     spec:
-      minimum:
-        value: '-2'
-        fail: true
-        measurement: std3n-above
-      typical:
-        value: '0'
-      maximum:
-        value: '2'
-        fail: true
-        measurement: std3p-below
+      inl:
+        minimum:
+          value: -2
+          fail: true
+          measurement: std3n-above
+        typical:
+          value: 0
+        maximum:
+          value: 2
+          fail: true
+          measurement: std3p-below
     tool:
       ngspice:
-        template: voltage_output.spice
+        template: voltage_output.sch
         collate: iterations
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
-    measure:
-    - tool: octave
-      filename: inl.m
+        variables: [null, vout]
+        script: inl.py
+        script_variables: [inl]
+    plot:
+      inl_mc:
+        type: histogram
+        xaxis: inl
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       b[7:0]:
-        maximum: '11100000'
-        minimum: '00011111'
+        maximum: 0b11100000
+        minimum: 0b00011111
       temperature:
-        typical: '27'
+        typical: 27
       iterations:
         description: Iterations to run
         display: Iterations
-        minimum: '1'
-        maximum: '50'
+        minimum: 1
+        maximum: 50
         step: linear
-        stepsize: '1'
+        stepsize: 1
       corner:
         typical: mc
+
   DNL:
     description: Differential nonlinearity (DNL)
     display: DNL
     unit: lsb
     spec:
-      minimum:
-        value: '-2'
-        fail: true
-      typical:
-        value: '0'
-      maximum:
-        value: '2'
-        fail: true
+      dnl:
+        minimum:
+          value: -2
+          fail: true
+        typical:
+          value: 0
+        maximum:
+          value: 2
+          fail: true
     tool:
       ngspice:
-        template: voltage_output.spice
+        template: voltage_output.sch
         collate: b[7:0]
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
-    measure:
-    - tool: octave
-      filename: dnl.m
+        variables: [null, vout]
+        script: dnl.py
+        script_variables: [dnl, b_lower]
+    plot:
+      dnl:
+        xaxis: b_lower
+        yaxis: dnl
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       b[7:0]:
         enumerate:
-        - '00000000'
-        - '00000001'
-        - '00001111'
-        - '00010000'
-        - '00011111'
-        - '00100000'
-        - '01111111'
-        - '10000000'
-        - '01111111'
-        - '10000000'
-        - '10000001'
-        - '11111110'
-        - '11111111'
+        - 0b00000000
+        - 0b00000001
+        - 0b00001111
+        - 0b00010000
+        - 0b00011111
+        - 0b00100000
+        - 0b01111111
+        - 0b10000000
+        - 0b01111111
+        - 0b10000000
+        - 0b10000001
+        - 0b11111110
+        - 0b11111111
       temperature:
-        typical: '27'
+        typical: 27
       corner:
         typical: tt
+
   offset_error:
-    description: Output offset error
-    display: Offset Error
-    unit: '%FSR'
     spec:
-      minimum:
-        value: '-0.02'
-        fail: true
-      typical:
-        value: '0'
-      maximum:
-        value: '0.01'
-        fail: true
+      offset_error:
+        description: Output offset error
+        display: Offset Error
+        unit: '%FSR'
+        minimum:
+          value: -2
+          fail: true
+        typical:
+          value: 0
+        maximum:
+          value: 1
+          fail: true
     tool:
       ngspice:
-        template: voltage_output.spice
+        template: voltage_output.sch
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
-    measure:
-    - tool: octave
-      filename: offset_err.m
+        variables: [null, vout]
+        script: offset_error.py
+        script_variables: [offset_error]
+    plot:
+        offset_error:
+            xaxis: b[7:0]
+            yaxis: offset_error
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       temperature:
-        maximum: '110'
-        typical: '27'
-        minimum: '-40'
+        maximum: 110
+        typical: 27
+        minimum: -40
       b[7:0]:
-        maximum: '11100110'
-        minimum: '00011001'
+        maximum: 0b11100110
+        minimum: 0b00011001
       corner:
         minimum: ss
         typical: tt
         maximum: ff
+
   gain_error:
     description: Output gain error
     display: Gain Error
     unit: '%FSR'
     spec:
-      minimum:
-        value: '-0.02'
-        fail: true
-      typical:
-        value: '0'
-      maximum:
-        value: '0.02'
-        fail: true
+      gain_error:
+        minimum:
+          value: -2
+        typical:
+          value: 0
+        maximum:
+          value: 2
     tool:
       ngspice:
-        template: voltage_output.spice
+        template: voltage_output.sch
         collate: b[7:0]
         format: ascii
         suffix: .data
-        variables:
-        - 'null'
-        - result
-    measure:
-    - tool: octave
-      filename: gain_err.m
+        variables: [null, vout]
+        script: gain_error.py
+        script_variables: [gain_error]
+    plot:
+      transfer_function:
+        xaxis: b[7:0]
+        yaxis: vout
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       temperature:
-        maximum: '110'
-        typical: '27'
-        minimum: '-40'
+        maximum: 110
+        typical: 27
+        minimum: -40
       b[7:0]:
-        maximum: '11100110'
-        minimum: '00011001'
-        note: gain measured at 10% and 90% values
+        minimum: 0b00000000
+        maximum: 0b11111111
+        step: linear
+        stepsize: 16
       corner:
         minimum: ss
         typical: tt
         maximum: ff
+
   transient_response:
     status: skip
     description: Digital sine wave transient response
-    display: out
+    display: Transient response
     unit: V
     tool:
       ngspice:
-        template: transient_sine.spice
+        template: transient_sine.sch
         format: ascii
         suffix: .data
-        variables:
-        - time
-        - result
+        variables: [time, result]
     plot:
-      filename: transient_sine.png
-      xaxis: time
-      yaxis: result
+      transient_sine:
+        suffix: .png
+        xaxis: time
+        yaxis: [result]
     variables:
       time:
         display: Time
         unit: ms
     conditions:
       Vdvdd:
-        typical: '1.8'
+        typical: 1.8
       Vvdd:
-        typical: '3.3'
+        typical: 3.3
       index:
-        typical: '1'
+        typical: 1
       Tmax:
         display: Simulation time
         unit: ns
-        typical: '4000'
+        typical: 4000
       frequency:
         note: units are kHz, but value is part of data file name
-        typical: '20'
+        typical: 20
       temperature:
-        typical: '27'
+        typical: 27
       corner:
         typical: tt
 
@@ -470,7 +489,7 @@ parameters:
         description: Total circuit layout area
         unit: µm²
         maximum:
-          value: 50000
+          value: any
       width:
         display: Width
         description: Total circuit layout width
@@ -494,7 +513,8 @@ parameters:
         maximum:
           value: 0
     tool:
-      magic_drc
+      magic_drc:
+        gds_flatten: true
 
   netgen_lvs:
     description: Netgen LVS
@@ -505,7 +525,29 @@ parameters:
           value: 0
     tool:
       netgen_lvs:
-        script: run_lvs.tcl
+        script: run_project_lvs.tcl
+
+  klayout_drc_feol:
+    description: KLayout DRC feol
+    display: KLayout DRC feol
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'feol=true']
+
+  klayout_drc_beol:
+    description: KLayout DRC beol
+    display: KLayout DRC beol
+    spec:
+      drc_errors:
+        maximum:
+          value: 0
+    tool:
+        klayout_drc:
+            args: ['-rd', 'beol=true']
 
   klayout_drc_full:
     description: KLayout DRC full
