@@ -120,8 +120,8 @@ Class sky130_fd_sc_hvl__inv_8 (1):  Merged 14 parallel devices.
 Subcircuit summary:
 Circuit 1: sky130_fd_sc_hvl__inv_8         |Circuit 2: sky130_fd_sc_hvl__inv_8         
 -------------------------------------------|-------------------------------------------
-sky130_fd_pr__pfet_g5v0d10v5 (8->1)        |sky130_fd_pr__pfet_g5v0d10v5 (8->1)        
 sky130_fd_pr__nfet_g5v0d10v5 (8->1)        |sky130_fd_pr__nfet_g5v0d10v5 (8->1)        
+sky130_fd_pr__pfet_g5v0d10v5 (8->1)        |sky130_fd_pr__pfet_g5v0d10v5 (8->1)        
 Number of devices: 2                       |Number of devices: 2                       
 Number of nets: 6                          |Number of nets: 6                          
 ---------------------------------------------------------------------------------------
@@ -130,12 +130,12 @@ Netlists match uniquely.
 Subcircuit pins:
 Circuit 1: sky130_fd_sc_hvl__inv_8         |Circuit 2: sky130_fd_sc_hvl__inv_8         
 -------------------------------------------|-------------------------------------------
+A                                          |A                                          
+Y                                          |Y                                          
 VPWR                                       |VPWR                                       
 VPB                                        |VPB                                        
 VGND                                       |VGND                                       
 VNB                                        |VNB                                        
-A                                          |A                                          
-Y                                          |Y                                          
 ---------------------------------------------------------------------------------------
 Cell pin lists are equivalent.
 Device classes sky130_fd_sc_hvl__inv_8 and sky130_fd_sc_hvl__inv_8 are equivalent.
