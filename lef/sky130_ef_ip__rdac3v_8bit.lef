@@ -2,9 +2,9 @@ VERSION 5.7 ;
   NOWIREEXTENSIONATPIN ON ;
   DIVIDERCHAR "/" ;
   BUSBITCHARS "[]" ;
-MACRO dac_3v_8bit
+MACRO sky130_ef_ip__rdac3v_8bit
   CLASS BLOCK ;
-  FOREIGN dac_3v_8bit ;
+  FOREIGN sky130_ef_ip__rdac3v_8bit ;
   ORIGIN 0.000 0.000 ;
   SIZE 129.695 BY 121.595 ;
   PIN b0
@@ -159,6 +159,6 @@ MACRO dac_3v_8bit
       LAYER met5 ;
         RECT 38.415 8.850 114.635 70.550 ;
   END
-END dac_3v_8bit
+END sky130_ef_ip__rdac3v_8bit
 END LIBRARY
 

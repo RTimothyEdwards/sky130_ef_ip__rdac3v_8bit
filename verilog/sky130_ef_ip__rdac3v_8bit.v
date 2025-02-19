@@ -26,14 +26,13 @@
 /*--------------------------------------------------------------*/
 
 `default_nettype none
-`timescale 1 ns / 1 ps
 
-module sample_and_hold #(parameter FUNCTIONAL = 1)(
+module sky130_ef_ip__rdac3v_8bit #(parameter FUNCTIONAL = 1)(
 `ifdef USE_POWER_PINS
-   input       vdd,
-   input       vss,
-   input       dvdd,
-   input       dvss,
+   inout       vdd,
+   inout       vss,
+   inout       dvdd,
+   inout       dvss,
 `endif
    input  real Vlow,
    input  real Vhigh,
