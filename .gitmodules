@@ -1,3 +1,3 @@
-[submodule "sky130_ef_ip__samplehold"]
-	path = dependencies/sky130_ef_ip__samplehold
-	url = ../sky130_ef_ip__samplehold.git
+[submodule "ip/sky130_ef_ip__samplehold"]
+	path = ip/sky130_ef_ip__samplehold
+	url = ../../efabless/sky130_ef_ip__samplehold.git

@@ -1580,7 +1580,7 @@ use dac_3v_column_odd  dac_3v_column_odd_7
 timestamp 1653060931
 transform 1 0 23322 0 1 322
 box -20 -7 1049 15263
-use follower_amp  follower_amp_0 ../dependencies/sky130_ef_ip__samplehold/mag
+use follower_amp  follower_amp_0 ../ip/sky130_ef_ip__samplehold/mag
 timestamp 1718228583
 transform 0 1 12491 1 0 16882
 box 0 0 4377 11129

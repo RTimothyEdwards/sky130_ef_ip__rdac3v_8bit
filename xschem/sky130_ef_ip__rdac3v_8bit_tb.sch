@@ -1,4 +1,4 @@
-v {xschem version=3.0.0 file_version=1.2 }
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -159,11 +159,11 @@ C {devices/vsource.sym} -780 -2810 0 0 {name=V8 value="PULSE(0 1.8 50n 5n 5n 16u
 C {devices/vsource.sym} -780 -2730 0 0 {name=V9 value="PULSE(0 1.8 50n 5n 5n 32u 64u)"}
 C {devices/vsource.sym} -780 -2650 0 0 {name=V10 value="PULSE(0 1.8 50n 5n 5n 64u 128u)"}
 C {devices/vsource.sym} -780 -2570 0 0 {name=V12 value="PULSE(0 1.8 50n 5n 5n 128u 256u)"}
-C {devices/code.sym} -80 -3110 0 0 {name=s1 only_toplevel=false value="
-.lib /usr/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
-.include /usr/share/pdk/sky130A/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
+C {devices/code.sym} -80 -3110 0 0 {name=Libs only_toplevel=false value="
+.lib $PDK_ROOT/$PDK/libs.tech/ngspice/sky130.lib.spice tt
+.include $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hvl/spice/sky130_fd_sc_hvl.spice
 "}
-C {devices/code.sym} 100 -3110 0 0 {name=s2 only_toplevel=false value="
+C {devices/code_shown.sym} 100 -3090 0 0 {name=Control only_toplevel=false value="
 .control
 tran 50m 256u
 plot V(out)
