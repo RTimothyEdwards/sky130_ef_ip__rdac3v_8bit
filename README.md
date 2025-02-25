@@ -1,5 +1,9 @@
 # Analog IP design example: 8-bit Resistive ladder DAC ![](../../workflows/cace/badge.svg)
 
+## Important note:
+
+This project has been moved to [github/efabless](https://github.com/efabless/sky130_ef_ip__rdac3v_8bit).  This local repository has been archived, and continued development will be done under the Efabless github location.
+
 This is a simple 8-bit DAC demonstrating the use
 of the CACE system. It requires [CACE](https://github.com/efabless/cace) to run the testbenches.
 
